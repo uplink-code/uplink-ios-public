@@ -152,13 +152,14 @@ __attribute__((swift_name("KotlinBoolean")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DeviceInfo")))
 @interface UIOSDeviceInfo : UIOSBase
-- (instancetype)initWithDeviceModel:(NSString *)deviceModel platform:(NSString *)platform platformVersion:(NSString *)platformVersion deviceType:(NSString *)deviceType __attribute__((swift_name("init(deviceModel:platform:platformVersion:deviceType:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithDeviceId:(NSString *)deviceId deviceModel:(NSString *)deviceModel platform:(NSString *)platform platformVersion:(NSString *)platformVersion deviceType:(NSString *)deviceType __attribute__((swift_name("init(deviceId:deviceModel:platform:platformVersion:deviceType:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) UIOSDeviceInfoCompanion *companion __attribute__((swift_name("companion")));
-- (UIOSDeviceInfo *)doCopyDeviceModel:(NSString *)deviceModel platform:(NSString *)platform platformVersion:(NSString *)platformVersion deviceType:(NSString *)deviceType __attribute__((swift_name("doCopy(deviceModel:platform:platformVersion:deviceType:)")));
+- (UIOSDeviceInfo *)doCopyDeviceId:(NSString *)deviceId deviceModel:(NSString *)deviceModel platform:(NSString *)platform platformVersion:(NSString *)platformVersion deviceType:(NSString *)deviceType __attribute__((swift_name("doCopy(deviceId:deviceModel:platform:platformVersion:deviceType:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSDictionary<NSString *, NSString *> *)toHeaders __attribute__((swift_name("toHeaders()")));
 - (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *deviceId __attribute__((swift_name("deviceId")));
 @property (readonly) NSString *deviceModel __attribute__((swift_name("deviceModel")));
 @property (readonly) NSString *deviceType __attribute__((swift_name("deviceType")));
 @property (readonly) NSString *platform __attribute__((swift_name("platform")));
@@ -419,6 +420,7 @@ __attribute__((swift_name("Worker")))
  */
 - (id<UIOSKtor_ioCloseable>)watchBlock:(void (^)(UIOSWorkerEvent *))block __attribute__((swift_name("watch(block:)")));
 @property (readonly) UIOSAddress *address __attribute__((swift_name("address")));
+@property NSString *deviceId __attribute__((swift_name("deviceId")));
 @property (readonly) id<UIOSKotlinx_coroutines_coreSharedFlow> events __attribute__((swift_name("events")));
 @end
 
@@ -549,6 +551,13 @@ __attribute__((swift_name("WaitForOptions")))
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) int64_t interval __attribute__((swift_name("interval")));
 @property (readonly) int32_t times __attribute__((swift_name("times")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("WorkerKt")))
+@interface UIOSWorkerKt : UIOSBase
++ (NSString *)generateDeviceId __attribute__((swift_name("generateDeviceId()")));
++ (NSString *)getDeviceIdStorageKey __attribute__((swift_name("getDeviceIdStorageKey()")));
 @end
 
 __attribute__((swift_name("Kotlinx_serialization_coreSerializationStrategy")))
@@ -809,14 +818,11 @@ __attribute__((swift_name("Kotlinx_serialization_coreDecoder")))
  * Other uncaught Kotlin exceptions are fatal.
 */
 - (void)emitType:(NSString *)type data:(id _Nullable)data completionHandler_:(void (^)(UIOSCoreEmitterEvent<id> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(type:data:completionHandler_:)")));
-- (void)offType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type handler:(id<UIOSKotlinSuspendFunction1> _Nullable)handler __attribute__((swift_name("off(type:handler:)")));
-- (void)offType:(NSString *)type handler_:(id<UIOSKotlinSuspendFunction1> _Nullable)handler __attribute__((swift_name("off(type:handler_:)")));
-- (id<UIOSKotlinSuspendFunction1>)onType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type handler:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:handler:)")));
-- (id<UIOSKotlinSuspendFunction1>)onType:(NSString *)type handler_:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:handler_:)")));
-- (id<UIOSKotlinSuspendFunction1>)onType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type removable:(BOOL)removable handler:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:removable:handler:)")));
-- (id<UIOSKotlinSuspendFunction1>)onType:(NSString *)type removable:(BOOL)removable handler_:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:removable:handler_:)")));
-- (id<UIOSKotlinSuspendFunction1>)onceType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type handler:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("once(type:handler:)")));
-- (id<UIOSKotlinSuspendFunction1>)onceType:(NSString *)type handler_:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("once(type:handler_:)")));
+- (void)offJob:(id<UIOSKotlinx_coroutines_coreJob>)job __attribute__((swift_name("off(job:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type handler:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:handler:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onType:(NSString *)type handler_:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:handler_:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onceType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type handler:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("once(type:handler:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onceType:(NSString *)type handler_:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("once(type:handler_:)")));
 @property (readonly) id<UIOSKotlinx_coroutines_coreFlow> events __attribute__((swift_name("events")));
 @end
 
@@ -1081,6 +1087,70 @@ __attribute__((swift_name("KotlinNothing")))
 - (id<PageProtocol>)createBrowser:(id<BrowserProtocol>)browser __attribute__((swift_name("create(browser:)")));
 @end
 
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.3")
+*/
+__attribute__((swift_name("KotlinCoroutineContext")))
+@protocol UIOSKotlinCoroutineContext
+@required
+- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<UIOSKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
+- (id<UIOSKotlinCoroutineContextElement> _Nullable)getKey:(id<UIOSKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
+- (id<UIOSKotlinCoroutineContext>)minusKeyKey:(id<UIOSKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
+- (id<UIOSKotlinCoroutineContext>)plusContext:(id<UIOSKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
+@end
+
+__attribute__((swift_name("KotlinCoroutineContextElement")))
+@protocol UIOSKotlinCoroutineContextElement <UIOSKotlinCoroutineContext>
+@required
+@property (readonly) id<UIOSKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreJob")))
+@protocol UIOSKotlinx_coroutines_coreJob <UIOSKotlinCoroutineContextElement>
+@required
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (id<UIOSKotlinx_coroutines_coreChildHandle>)attachChildChild:(id<UIOSKotlinx_coroutines_coreChildJob>)child __attribute__((swift_name("attachChild(child:)")));
+- (void)cancelCause:(UIOSKotlinCancellationException * _Nullable)cause __attribute__((swift_name("cancel(cause:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (UIOSKotlinCancellationException *)getCancellationException __attribute__((swift_name("getCancellationException()")));
+- (id<UIOSKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionHandler:(void (^)(UIOSKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(handler:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (id<UIOSKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionOnCancelling:(BOOL)onCancelling invokeImmediately:(BOOL)invokeImmediately handler:(void (^)(UIOSKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(onCancelling:invokeImmediately:handler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)joinWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("join(completionHandler:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)plusOther:(id<UIOSKotlinx_coroutines_coreJob>)other __attribute__((swift_name("plus(other:)"))) __attribute__((unavailable("Operator '+' on two Job objects is meaningless. Job is a coroutine context element and `+` is a set-sum operator for coroutine contexts. The job to the right of `+` just replaces the job the left of `+`.")));
+- (BOOL)start __attribute__((swift_name("start()")));
+@property (readonly) id<UIOSKotlinSequence> children __attribute__((swift_name("children")));
+@property (readonly) BOOL isActive __attribute__((swift_name("isActive")));
+@property (readonly) BOOL isCancelled __attribute__((swift_name("isCancelled")));
+@property (readonly) BOOL isCompleted __attribute__((swift_name("isCompleted")));
+@property (readonly) id<UIOSKotlinx_coroutines_coreSelectClause0> onJoin __attribute__((swift_name("onJoin")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.ExperimentalCoroutinesApi
+*/
+@property (readonly, getter=parent_) id<UIOSKotlinx_coroutines_coreJob> _Nullable parent __attribute__((swift_name("parent")));
+@end
+
 __attribute__((swift_name("KotlinFunction")))
 @protocol UIOSKotlinFunction
 @required
@@ -1153,6 +1223,23 @@ __attribute__((swift_name("Ktor_ioJvmSerializable")))
 
 
 /**
+ * Represents a cookie with name, content and a set of settings such as expiration, visibility and security.
+ * A cookie with neither [expires] nor [maxAge] is a session cookie.
+ *
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.http.Cookie)
+ *
+ * @property name
+ * @property value
+ * @property encoding - cookie encoding type [CookieEncoding]
+ * @property maxAge number of seconds to keep cookie
+ * @property expires date when it expires
+ * @property domain for which it is set
+ * @property path for which it is set
+ * @property secure send it via secure connection only
+ * @property httpOnly only transfer cookie over HTTP, no access from JavaScript
+ * @property extensions additional cookie extensions
+ *
  * @note annotations
  *   kotlinx.serialization.Serializable
 */
@@ -1162,8 +1249,65 @@ __attribute__((swift_name("Ktor_httpCookie")))
 - (instancetype)initWithName:(NSString *)name value:(NSString *)value encoding:(UIOSKtor_httpCookieEncoding *)encoding maxAge:(UIOSInt * _Nullable)maxAge expires:(UIOSKtor_utilsGMTDate * _Nullable)expires domain:(NSString * _Nullable)domain path:(NSString * _Nullable)path secure:(BOOL)secure httpOnly:(BOOL)httpOnly extensions:(NSDictionary<NSString *, id> *)extensions __attribute__((swift_name("init(name:value:encoding:maxAge:expires:domain:path:secure:httpOnly:extensions:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) UIOSKtor_httpCookieCompanion *companion __attribute__((swift_name("companion")));
 - (UIOSKtor_httpCookie *)doCopyName:(NSString *)name value:(NSString *)value encoding:(UIOSKtor_httpCookieEncoding *)encoding maxAge:(UIOSInt * _Nullable)maxAge expires:(UIOSKtor_utilsGMTDate * _Nullable)expires domain:(NSString * _Nullable)domain path:(NSString * _Nullable)path secure:(BOOL)secure httpOnly:(BOOL)httpOnly extensions:(NSDictionary<NSString *, id> *)extensions __attribute__((swift_name("doCopy(name:value:encoding:maxAge:expires:domain:path:secure:httpOnly:extensions:)")));
+
+/**
+ * Represents a cookie with name, content and a set of settings such as expiration, visibility and security.
+ * A cookie with neither [expires] nor [maxAge] is a session cookie.
+ *
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.http.Cookie)
+ *
+ * @property name
+ * @property value
+ * @property encoding - cookie encoding type [CookieEncoding]
+ * @property maxAge number of seconds to keep cookie
+ * @property expires date when it expires
+ * @property domain for which it is set
+ * @property path for which it is set
+ * @property secure send it via secure connection only
+ * @property httpOnly only transfer cookie over HTTP, no access from JavaScript
+ * @property extensions additional cookie extensions
+ */
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+
+/**
+ * Represents a cookie with name, content and a set of settings such as expiration, visibility and security.
+ * A cookie with neither [expires] nor [maxAge] is a session cookie.
+ *
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.http.Cookie)
+ *
+ * @property name
+ * @property value
+ * @property encoding - cookie encoding type [CookieEncoding]
+ * @property maxAge number of seconds to keep cookie
+ * @property expires date when it expires
+ * @property domain for which it is set
+ * @property path for which it is set
+ * @property secure send it via secure connection only
+ * @property httpOnly only transfer cookie over HTTP, no access from JavaScript
+ * @property extensions additional cookie extensions
+ */
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
+
+/**
+ * Represents a cookie with name, content and a set of settings such as expiration, visibility and security.
+ * A cookie with neither [expires] nor [maxAge] is a session cookie.
+ *
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.http.Cookie)
+ *
+ * @property name
+ * @property value
+ * @property encoding - cookie encoding type [CookieEncoding]
+ * @property maxAge number of seconds to keep cookie
+ * @property expires date when it expires
+ * @property domain for which it is set
+ * @property path for which it is set
+ * @property secure send it via secure connection only
+ * @property httpOnly only transfer cookie over HTTP, no access from JavaScript
+ * @property extensions additional cookie extensions
+ */
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString * _Nullable domain __attribute__((swift_name("domain")));
 @property (readonly) UIOSKtor_httpCookieEncoding *encoding __attribute__((swift_name("encoding")));
@@ -1175,70 +1319,6 @@ __attribute__((swift_name("Ktor_httpCookie")))
 @property (readonly) NSString * _Nullable path __attribute__((swift_name("path")));
 @property (readonly) BOOL secure __attribute__((swift_name("secure")));
 @property (readonly) NSString *value __attribute__((swift_name("value")));
-@end
-
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="1.3")
-*/
-__attribute__((swift_name("KotlinCoroutineContext")))
-@protocol UIOSKotlinCoroutineContext
-@required
-- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<UIOSKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
-- (id<UIOSKotlinCoroutineContextElement> _Nullable)getKey:(id<UIOSKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
-- (id<UIOSKotlinCoroutineContext>)minusKeyKey:(id<UIOSKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
-- (id<UIOSKotlinCoroutineContext>)plusContext:(id<UIOSKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
-@end
-
-__attribute__((swift_name("KotlinCoroutineContextElement")))
-@protocol UIOSKotlinCoroutineContextElement <UIOSKotlinCoroutineContext>
-@required
-@property (readonly) id<UIOSKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreJob")))
-@protocol UIOSKotlinx_coroutines_coreJob <UIOSKotlinCoroutineContextElement>
-@required
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-- (id<UIOSKotlinx_coroutines_coreChildHandle>)attachChildChild:(id<UIOSKotlinx_coroutines_coreChildJob>)child __attribute__((swift_name("attachChild(child:)")));
-- (void)cancelCause:(UIOSKotlinCancellationException * _Nullable)cause __attribute__((swift_name("cancel(cause:)")));
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-- (UIOSKotlinCancellationException *)getCancellationException __attribute__((swift_name("getCancellationException()")));
-- (id<UIOSKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionHandler:(void (^)(UIOSKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(handler:)")));
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-- (id<UIOSKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionOnCancelling:(BOOL)onCancelling invokeImmediately:(BOOL)invokeImmediately handler:(void (^)(UIOSKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(onCancelling:invokeImmediately:handler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)joinWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("join(completionHandler:)")));
-- (id<UIOSKotlinx_coroutines_coreJob>)plusOther:(id<UIOSKotlinx_coroutines_coreJob>)other __attribute__((swift_name("plus(other:)"))) __attribute__((unavailable("Operator '+' on two Job objects is meaningless. Job is a coroutine context element and `+` is a set-sum operator for coroutine contexts. The job to the right of `+` just replaces the job the left of `+`.")));
-- (BOOL)start __attribute__((swift_name("start()")));
-@property (readonly) id<UIOSKotlinSequence> children __attribute__((swift_name("children")));
-@property (readonly) BOOL isActive __attribute__((swift_name("isActive")));
-@property (readonly) BOOL isCancelled __attribute__((swift_name("isCancelled")));
-@property (readonly) BOOL isCompleted __attribute__((swift_name("isCompleted")));
-@property (readonly) id<UIOSKotlinx_coroutines_coreSelectClause0> onJoin __attribute__((swift_name("onJoin")));
-
-/**
- * @note annotations
- *   kotlinx.coroutines.ExperimentalCoroutinesApi
-*/
-@property (readonly, getter=parent_) id<UIOSKotlinx_coroutines_coreJob> _Nullable parent __attribute__((swift_name("parent")));
 @end
 
 __attribute__((swift_name("Kotlinx_coroutines_coreDeferred")))
@@ -1291,76 +1371,6 @@ __attribute__((swift_name("CoreResponse")))
 @property (readonly) int32_t status __attribute__((swift_name("status")));
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpCookieEncoding")))
-@interface UIOSKtor_httpCookieEncoding : UIOSKotlinEnum<UIOSKtor_httpCookieEncoding *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly) UIOSKtor_httpCookieEncoding *raw __attribute__((swift_name("raw")));
-@property (class, readonly) UIOSKtor_httpCookieEncoding *dquotes __attribute__((swift_name("dquotes")));
-@property (class, readonly) UIOSKtor_httpCookieEncoding *uriEncoding __attribute__((swift_name("uriEncoding")));
-@property (class, readonly) UIOSKtor_httpCookieEncoding *base64Encoding __attribute__((swift_name("base64Encoding")));
-+ (UIOSKotlinArray<UIOSKtor_httpCookieEncoding *> *)values __attribute__((swift_name("values()")));
-@property (class, readonly) NSArray<UIOSKtor_httpCookieEncoding *> *entries __attribute__((swift_name("entries")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.serialization.Serializable
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsGMTDate")))
-@interface UIOSKtor_utilsGMTDate : UIOSBase <UIOSKotlinComparable>
-- (instancetype)initWithSeconds:(int32_t)seconds minutes:(int32_t)minutes hours:(int32_t)hours dayOfWeek:(UIOSKtor_utilsWeekDay *)dayOfWeek dayOfMonth:(int32_t)dayOfMonth dayOfYear:(int32_t)dayOfYear month:(UIOSKtor_utilsMonth *)month year:(int32_t)year timestamp:(int64_t)timestamp __attribute__((swift_name("init(seconds:minutes:hours:dayOfWeek:dayOfMonth:dayOfYear:month:year:timestamp:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) UIOSKtor_utilsGMTDateCompanion *companion __attribute__((swift_name("companion")));
-- (int32_t)compareToOther:(UIOSKtor_utilsGMTDate *)other __attribute__((swift_name("compareTo(other:)")));
-- (UIOSKtor_utilsGMTDate *)doCopy __attribute__((swift_name("doCopy()")));
-- (UIOSKtor_utilsGMTDate *)doCopySeconds:(int32_t)seconds minutes:(int32_t)minutes hours:(int32_t)hours dayOfWeek:(UIOSKtor_utilsWeekDay *)dayOfWeek dayOfMonth:(int32_t)dayOfMonth dayOfYear:(int32_t)dayOfYear month:(UIOSKtor_utilsMonth *)month year:(int32_t)year timestamp:(int64_t)timestamp __attribute__((swift_name("doCopy(seconds:minutes:hours:dayOfWeek:dayOfMonth:dayOfYear:month:year:timestamp:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) int32_t dayOfMonth __attribute__((swift_name("dayOfMonth")));
-@property (readonly) UIOSKtor_utilsWeekDay *dayOfWeek __attribute__((swift_name("dayOfWeek")));
-@property (readonly) int32_t dayOfYear __attribute__((swift_name("dayOfYear")));
-@property (readonly) int32_t hours __attribute__((swift_name("hours")));
-@property (readonly) int32_t minutes __attribute__((swift_name("minutes")));
-@property (readonly) UIOSKtor_utilsMonth *month __attribute__((swift_name("month")));
-@property (readonly) int32_t seconds __attribute__((swift_name("seconds")));
-@property (readonly) int64_t timestamp __attribute__((swift_name("timestamp")));
-@property (readonly) int32_t year __attribute__((swift_name("year")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_httpCookie.Companion")))
-@interface UIOSKtor_httpCookieCompanion : UIOSBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) UIOSKtor_httpCookieCompanion *shared __attribute__((swift_name("shared")));
-- (id<UIOSKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause")))
-@protocol UIOSKotlinx_coroutines_coreSelectClause
-@required
-@property (readonly) id clauseObject __attribute__((swift_name("clauseObject")));
-@property (readonly) UIOSKotlinUnit *(^(^ _Nullable onCancellationConstructor)(id<UIOSKotlinx_coroutines_coreSelectInstance>, id _Nullable, id _Nullable))(UIOSKotlinThrowable *, id _Nullable, id<UIOSKotlinCoroutineContext>) __attribute__((swift_name("onCancellationConstructor")));
-@property (readonly) id _Nullable (^processResFunc)(id, id _Nullable, id _Nullable) __attribute__((swift_name("processResFunc")));
-@property (readonly) void (^regFunc)(id, id<UIOSKotlinx_coroutines_coreSelectInstance>, id _Nullable) __attribute__((swift_name("regFunc")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause1")))
-@protocol UIOSKotlinx_coroutines_coreSelectClause1 <UIOSKotlinx_coroutines_coreSelectClause>
-@required
-@end
-
 __attribute__((swift_name("Kotlinx_coroutines_coreDisposableHandle")))
 @protocol UIOSKotlinx_coroutines_coreDisposableHandle
 @required
@@ -1411,6 +1421,20 @@ __attribute__((swift_name("KotlinSequence")))
 - (id<UIOSKotlinIterator>)iterator __attribute__((swift_name("iterator()")));
 @end
 
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause")))
+@protocol UIOSKotlinx_coroutines_coreSelectClause
+@required
+@property (readonly) id clauseObject __attribute__((swift_name("clauseObject")));
+@property (readonly) UIOSKotlinUnit *(^(^ _Nullable onCancellationConstructor)(id<UIOSKotlinx_coroutines_coreSelectInstance>, id _Nullable, id _Nullable))(UIOSKotlinThrowable *, id _Nullable, id<UIOSKotlinCoroutineContext>) __attribute__((swift_name("onCancellationConstructor")));
+@property (readonly) id _Nullable (^processResFunc)(id, id _Nullable, id _Nullable) __attribute__((swift_name("processResFunc")));
+@property (readonly) void (^regFunc)(id, id<UIOSKotlinx_coroutines_coreSelectInstance>, id _Nullable) __attribute__((swift_name("regFunc")));
+@end
+
 __attribute__((swift_name("Kotlinx_coroutines_coreSelectClause0")))
 @protocol UIOSKotlinx_coroutines_coreSelectClause0 <UIOSKotlinx_coroutines_coreSelectClause>
 @required
@@ -1418,6 +1442,201 @@ __attribute__((swift_name("Kotlinx_coroutines_coreSelectClause0")))
 
 __attribute__((swift_name("KotlinCoroutineContextKey")))
 @protocol UIOSKotlinCoroutineContextKey
+@required
+@end
+
+
+/**
+ * Cooke encoding strategy
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.http.CookieEncoding)
+ */
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpCookieEncoding")))
+@interface UIOSKtor_httpCookieEncoding : UIOSKotlinEnum<UIOSKtor_httpCookieEncoding *>
++ (instancetype)alloc __attribute__((unavailable));
+
+/**
+ * Cooke encoding strategy
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.http.CookieEncoding)
+ */
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly) UIOSKtor_httpCookieEncoding *raw __attribute__((swift_name("raw")));
+@property (class, readonly) UIOSKtor_httpCookieEncoding *dquotes __attribute__((swift_name("dquotes")));
+@property (class, readonly) UIOSKtor_httpCookieEncoding *uriEncoding __attribute__((swift_name("uriEncoding")));
+@property (class, readonly) UIOSKtor_httpCookieEncoding *base64Encoding __attribute__((swift_name("base64Encoding")));
++ (UIOSKotlinArray<UIOSKtor_httpCookieEncoding *> *)values __attribute__((swift_name("values()")));
+@property (class, readonly) NSArray<UIOSKtor_httpCookieEncoding *> *entries __attribute__((swift_name("entries")));
+@end
+
+
+/**
+ * Date in GMT timezone
+ *
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.GMTDate)
+ *
+ * @property seconds: seconds from 0 to 60(last is for leap second)
+ * @property minutes: minutes from 0 to 59
+ * @property hours: hours from 0 to 23
+ * @property dayOfWeek an instance of the corresponding day of week
+ * @property dayOfMonth: day of month from 1 to 31
+ * @property dayOfYear: day of year from 1 to 366
+ * @property month an instance of the corresponding month
+ * @property year: year in common era(CE: https://en.wikipedia.org/wiki/Common_Era)
+ *
+ * @property timestamp is a number of epoch milliseconds
+ *
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsGMTDate")))
+@interface UIOSKtor_utilsGMTDate : UIOSBase <UIOSKotlinComparable>
+- (instancetype)initWithSeconds:(int32_t)seconds minutes:(int32_t)minutes hours:(int32_t)hours dayOfWeek:(UIOSKtor_utilsWeekDay *)dayOfWeek dayOfMonth:(int32_t)dayOfMonth dayOfYear:(int32_t)dayOfYear month:(UIOSKtor_utilsMonth *)month year:(int32_t)year timestamp:(int64_t)timestamp __attribute__((swift_name("init(seconds:minutes:hours:dayOfWeek:dayOfMonth:dayOfYear:month:year:timestamp:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) UIOSKtor_utilsGMTDateCompanion *companion __attribute__((swift_name("companion")));
+- (int32_t)compareToOther:(UIOSKtor_utilsGMTDate *)other __attribute__((swift_name("compareTo(other:)")));
+- (UIOSKtor_utilsGMTDate *)doCopy __attribute__((swift_name("doCopy()")));
+- (UIOSKtor_utilsGMTDate *)doCopySeconds:(int32_t)seconds minutes:(int32_t)minutes hours:(int32_t)hours dayOfWeek:(UIOSKtor_utilsWeekDay *)dayOfWeek dayOfMonth:(int32_t)dayOfMonth dayOfYear:(int32_t)dayOfYear month:(UIOSKtor_utilsMonth *)month year:(int32_t)year timestamp:(int64_t)timestamp __attribute__((swift_name("doCopy(seconds:minutes:hours:dayOfWeek:dayOfMonth:dayOfYear:month:year:timestamp:)")));
+
+/**
+ * Date in GMT timezone
+ *
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.GMTDate)
+ *
+ * @property seconds: seconds from 0 to 60(last is for leap second)
+ * @property minutes: minutes from 0 to 59
+ * @property hours: hours from 0 to 23
+ * @property dayOfWeek an instance of the corresponding day of week
+ * @property dayOfMonth: day of month from 1 to 31
+ * @property dayOfYear: day of year from 1 to 366
+ * @property month an instance of the corresponding month
+ * @property year: year in common era(CE: https://en.wikipedia.org/wiki/Common_Era)
+ *
+ * @property timestamp is a number of epoch milliseconds
+ */
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+
+/**
+ * Date in GMT timezone
+ *
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.GMTDate)
+ *
+ * @property seconds: seconds from 0 to 60(last is for leap second)
+ * @property minutes: minutes from 0 to 59
+ * @property hours: hours from 0 to 23
+ * @property dayOfWeek an instance of the corresponding day of week
+ * @property dayOfMonth: day of month from 1 to 31
+ * @property dayOfYear: day of year from 1 to 366
+ * @property month an instance of the corresponding month
+ * @property year: year in common era(CE: https://en.wikipedia.org/wiki/Common_Era)
+ *
+ * @property timestamp is a number of epoch milliseconds
+ */
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+
+/**
+ * Date in GMT timezone
+ *
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.GMTDate)
+ *
+ * @property seconds: seconds from 0 to 60(last is for leap second)
+ * @property minutes: minutes from 0 to 59
+ * @property hours: hours from 0 to 23
+ * @property dayOfWeek an instance of the corresponding day of week
+ * @property dayOfMonth: day of month from 1 to 31
+ * @property dayOfYear: day of year from 1 to 366
+ * @property month an instance of the corresponding month
+ * @property year: year in common era(CE: https://en.wikipedia.org/wiki/Common_Era)
+ *
+ * @property timestamp is a number of epoch milliseconds
+ */
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) int32_t dayOfMonth __attribute__((swift_name("dayOfMonth")));
+@property (readonly) UIOSKtor_utilsWeekDay *dayOfWeek __attribute__((swift_name("dayOfWeek")));
+@property (readonly) int32_t dayOfYear __attribute__((swift_name("dayOfYear")));
+@property (readonly) int32_t hours __attribute__((swift_name("hours")));
+@property (readonly) int32_t minutes __attribute__((swift_name("minutes")));
+@property (readonly) UIOSKtor_utilsMonth *month __attribute__((swift_name("month")));
+@property (readonly) int32_t seconds __attribute__((swift_name("seconds")));
+@property (readonly) int64_t timestamp __attribute__((swift_name("timestamp")));
+@property (readonly) int32_t year __attribute__((swift_name("year")));
+@end
+
+
+/**
+ * Represents a cookie with name, content and a set of settings such as expiration, visibility and security.
+ * A cookie with neither [expires] nor [maxAge] is a session cookie.
+ *
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.http.Cookie)
+ *
+ * @property name
+ * @property value
+ * @property encoding - cookie encoding type [CookieEncoding]
+ * @property maxAge number of seconds to keep cookie
+ * @property expires date when it expires
+ * @property domain for which it is set
+ * @property path for which it is set
+ * @property secure send it via secure connection only
+ * @property httpOnly only transfer cookie over HTTP, no access from JavaScript
+ * @property extensions additional cookie extensions
+ */
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpCookie.Companion")))
+@interface UIOSKtor_httpCookieCompanion : UIOSBase
++ (instancetype)alloc __attribute__((unavailable));
+
+/**
+ * Represents a cookie with name, content and a set of settings such as expiration, visibility and security.
+ * A cookie with neither [expires] nor [maxAge] is a session cookie.
+ *
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.http.Cookie)
+ *
+ * @property name
+ * @property value
+ * @property encoding - cookie encoding type [CookieEncoding]
+ * @property maxAge number of seconds to keep cookie
+ * @property expires date when it expires
+ * @property domain for which it is set
+ * @property path for which it is set
+ * @property secure send it via secure connection only
+ * @property httpOnly only transfer cookie over HTTP, no access from JavaScript
+ * @property extensions additional cookie extensions
+ */
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UIOSKtor_httpCookieCompanion *shared __attribute__((swift_name("shared")));
+
+/**
+ * Represents a cookie with name, content and a set of settings such as expiration, visibility and security.
+ * A cookie with neither [expires] nor [maxAge] is a session cookie.
+ *
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.http.Cookie)
+ *
+ * @property name
+ * @property value
+ * @property encoding - cookie encoding type [CookieEncoding]
+ * @property maxAge number of seconds to keep cookie
+ * @property expires date when it expires
+ * @property domain for which it is set
+ * @property path for which it is set
+ * @property secure send it via secure connection only
+ * @property httpOnly only transfer cookie over HTTP, no access from JavaScript
+ * @property extensions additional cookie extensions
+ */
+- (id<UIOSKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause1")))
+@protocol UIOSKotlinx_coroutines_coreSelectClause1 <UIOSKotlinx_coroutines_coreSelectClause>
 @required
 @end
 
@@ -1444,58 +1663,20 @@ __attribute__((swift_name("Kotlinx_serialization_jsonJsonElement")))
 @property (class, readonly, getter=companion) UIOSKotlinx_serialization_jsonJsonElementCompanion *companion __attribute__((swift_name("companion")));
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsWeekDay")))
-@interface UIOSKtor_utilsWeekDay : UIOSKotlinEnum<UIOSKtor_utilsWeekDay *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) UIOSKtor_utilsWeekDayCompanion *companion __attribute__((swift_name("companion")));
-@property (class, readonly) UIOSKtor_utilsWeekDay *monday __attribute__((swift_name("monday")));
-@property (class, readonly) UIOSKtor_utilsWeekDay *tuesday __attribute__((swift_name("tuesday")));
-@property (class, readonly) UIOSKtor_utilsWeekDay *wednesday __attribute__((swift_name("wednesday")));
-@property (class, readonly) UIOSKtor_utilsWeekDay *thursday __attribute__((swift_name("thursday")));
-@property (class, readonly) UIOSKtor_utilsWeekDay *friday __attribute__((swift_name("friday")));
-@property (class, readonly) UIOSKtor_utilsWeekDay *saturday __attribute__((swift_name("saturday")));
-@property (class, readonly) UIOSKtor_utilsWeekDay *sunday __attribute__((swift_name("sunday")));
-+ (UIOSKotlinArray<UIOSKtor_utilsWeekDay *> *)values __attribute__((swift_name("values()")));
-@property (class, readonly) NSArray<UIOSKtor_utilsWeekDay *> *entries __attribute__((swift_name("entries")));
-@property (readonly) NSString *value __attribute__((swift_name("value")));
-@end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsMonth")))
-@interface UIOSKtor_utilsMonth : UIOSKotlinEnum<UIOSKtor_utilsMonth *>
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
-@property (class, readonly, getter=companion) UIOSKtor_utilsMonthCompanion *companion __attribute__((swift_name("companion")));
-@property (class, readonly) UIOSKtor_utilsMonth *january __attribute__((swift_name("january")));
-@property (class, readonly) UIOSKtor_utilsMonth *february __attribute__((swift_name("february")));
-@property (class, readonly) UIOSKtor_utilsMonth *march __attribute__((swift_name("march")));
-@property (class, readonly) UIOSKtor_utilsMonth *april __attribute__((swift_name("april")));
-@property (class, readonly) UIOSKtor_utilsMonth *may __attribute__((swift_name("may")));
-@property (class, readonly) UIOSKtor_utilsMonth *june __attribute__((swift_name("june")));
-@property (class, readonly) UIOSKtor_utilsMonth *july __attribute__((swift_name("july")));
-@property (class, readonly) UIOSKtor_utilsMonth *august __attribute__((swift_name("august")));
-@property (class, readonly) UIOSKtor_utilsMonth *september __attribute__((swift_name("september")));
-@property (class, readonly) UIOSKtor_utilsMonth *october __attribute__((swift_name("october")));
-@property (class, readonly) UIOSKtor_utilsMonth *november __attribute__((swift_name("november")));
-@property (class, readonly) UIOSKtor_utilsMonth *december __attribute__((swift_name("december")));
-+ (UIOSKotlinArray<UIOSKtor_utilsMonth *> *)values __attribute__((swift_name("values()")));
-@property (class, readonly) NSArray<UIOSKtor_utilsMonth *> *entries __attribute__((swift_name("entries")));
-@property (readonly) NSString *value __attribute__((swift_name("value")));
-@end
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+__attribute__((swift_name("Kotlinx_coroutines_coreParentJob")))
+@protocol UIOSKotlinx_coroutines_coreParentJob <UIOSKotlinx_coroutines_coreJob>
+@required
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Ktor_utilsGMTDate.Companion")))
-@interface UIOSKtor_utilsGMTDateCompanion : UIOSBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) UIOSKtor_utilsGMTDateCompanion *shared __attribute__((swift_name("shared")));
-- (id<UIOSKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@property (readonly) UIOSKtor_utilsGMTDate *START __attribute__((swift_name("START")));
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (UIOSKotlinCancellationException *)getChildJobCancellationCause __attribute__((swift_name("getChildJobCancellationCause()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -1524,18 +1705,90 @@ __attribute__((swift_name("Kotlinx_coroutines_coreSelectInstance")))
 
 
 /**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-__attribute__((swift_name("Kotlinx_coroutines_coreParentJob")))
-@protocol UIOSKotlinx_coroutines_coreParentJob <UIOSKotlinx_coroutines_coreJob>
-@required
+ * Day of week
+ * [value] is 3 letter shortcut
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.WeekDay)
+ */
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsWeekDay")))
+@interface UIOSKtor_utilsWeekDay : UIOSKotlinEnum<UIOSKtor_utilsWeekDay *>
++ (instancetype)alloc __attribute__((unavailable));
 
 /**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-- (UIOSKotlinCancellationException *)getChildJobCancellationCause __attribute__((swift_name("getChildJobCancellationCause()")));
+ * Day of week
+ * [value] is 3 letter shortcut
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.WeekDay)
+ */
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly, getter=companion) UIOSKtor_utilsWeekDayCompanion *companion __attribute__((swift_name("companion")));
+@property (class, readonly) UIOSKtor_utilsWeekDay *monday __attribute__((swift_name("monday")));
+@property (class, readonly) UIOSKtor_utilsWeekDay *tuesday __attribute__((swift_name("tuesday")));
+@property (class, readonly) UIOSKtor_utilsWeekDay *wednesday __attribute__((swift_name("wednesday")));
+@property (class, readonly) UIOSKtor_utilsWeekDay *thursday __attribute__((swift_name("thursday")));
+@property (class, readonly) UIOSKtor_utilsWeekDay *friday __attribute__((swift_name("friday")));
+@property (class, readonly) UIOSKtor_utilsWeekDay *saturday __attribute__((swift_name("saturday")));
+@property (class, readonly) UIOSKtor_utilsWeekDay *sunday __attribute__((swift_name("sunday")));
++ (UIOSKotlinArray<UIOSKtor_utilsWeekDay *> *)values __attribute__((swift_name("values()")));
+@property (class, readonly) NSArray<UIOSKtor_utilsWeekDay *> *entries __attribute__((swift_name("entries")));
+@property (readonly) NSString *value __attribute__((swift_name("value")));
+@end
+
+
+/**
+ * Month
+ * [value] is 3 letter shortcut
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.Month)
+ */
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsMonth")))
+@interface UIOSKtor_utilsMonth : UIOSKotlinEnum<UIOSKtor_utilsMonth *>
++ (instancetype)alloc __attribute__((unavailable));
+
+/**
+ * Month
+ * [value] is 3 letter shortcut
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.Month)
+ */
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@property (class, readonly, getter=companion) UIOSKtor_utilsMonthCompanion *companion __attribute__((swift_name("companion")));
+@property (class, readonly) UIOSKtor_utilsMonth *january __attribute__((swift_name("january")));
+@property (class, readonly) UIOSKtor_utilsMonth *february __attribute__((swift_name("february")));
+@property (class, readonly) UIOSKtor_utilsMonth *march __attribute__((swift_name("march")));
+@property (class, readonly) UIOSKtor_utilsMonth *april __attribute__((swift_name("april")));
+@property (class, readonly) UIOSKtor_utilsMonth *may __attribute__((swift_name("may")));
+@property (class, readonly) UIOSKtor_utilsMonth *june __attribute__((swift_name("june")));
+@property (class, readonly) UIOSKtor_utilsMonth *july __attribute__((swift_name("july")));
+@property (class, readonly) UIOSKtor_utilsMonth *august __attribute__((swift_name("august")));
+@property (class, readonly) UIOSKtor_utilsMonth *september __attribute__((swift_name("september")));
+@property (class, readonly) UIOSKtor_utilsMonth *october __attribute__((swift_name("october")));
+@property (class, readonly) UIOSKtor_utilsMonth *november __attribute__((swift_name("november")));
+@property (class, readonly) UIOSKtor_utilsMonth *december __attribute__((swift_name("december")));
++ (UIOSKotlinArray<UIOSKtor_utilsMonth *> *)values __attribute__((swift_name("values()")));
+@property (class, readonly) NSArray<UIOSKtor_utilsMonth *> *entries __attribute__((swift_name("entries")));
+@property (readonly) NSString *value __attribute__((swift_name("value")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsGMTDate.Companion")))
+@interface UIOSKtor_utilsGMTDateCompanion : UIOSBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UIOSKtor_utilsGMTDateCompanion *shared __attribute__((swift_name("shared")));
+- (id<UIOSKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+
+/**
+ * An instance of [GMTDate] corresponding to the epoch beginning
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.GMTDate.Companion.START)
+ */
+@property (readonly) UIOSKtor_utilsGMTDate *START __attribute__((swift_name("START")));
 @end
 
 __attribute__((swift_name("KotlinByteIterator")))
@@ -1563,7 +1816,19 @@ __attribute__((swift_name("Ktor_utilsWeekDay.Companion")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) UIOSKtor_utilsWeekDayCompanion *shared __attribute__((swift_name("shared")));
+
+/**
+ * Lookup an instance by [ordinal]
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.WeekDay.Companion.from)
+ */
 - (UIOSKtor_utilsWeekDay *)fromOrdinal:(int32_t)ordinal __attribute__((swift_name("from(ordinal:)")));
+
+/**
+ * Lookup an instance by short week day name [WeekDay.value]
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.WeekDay.Companion.from)
+ */
 - (UIOSKtor_utilsWeekDay *)fromValue:(NSString *)value __attribute__((swift_name("from(value:)")));
 @end
 
@@ -1574,7 +1839,19 @@ __attribute__((swift_name("Ktor_utilsMonth.Companion")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) UIOSKtor_utilsMonthCompanion *shared __attribute__((swift_name("shared")));
+
+/**
+ * Lookup an instance by [ordinal]
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.Month.Companion.from)
+ */
 - (UIOSKtor_utilsMonth *)fromOrdinal:(int32_t)ordinal __attribute__((swift_name("from(ordinal:)")));
+
+/**
+ * Lookup an instance by short month name [Month.value]
+ *
+ * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.Month.Companion.from)
+ */
 - (UIOSKtor_utilsMonth *)fromValue:(NSString *)value __attribute__((swift_name("from(value:)")));
 @end
 
