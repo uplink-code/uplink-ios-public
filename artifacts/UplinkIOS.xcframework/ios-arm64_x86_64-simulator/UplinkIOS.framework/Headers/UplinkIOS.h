@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class UIOSAddress, UIOSAddressAddressType, UIOSAddressAddressTypeFactory, UIOSAddressCompanion, UIOSBrowserEvent, UIOSBrowserEventClosed, UIOSBrowserEventCreated, UIOSClickOptions, UIOSCoreEmitterEvent<T>, UIOSCoreResponse, UIOSDeviceInfo, UIOSDeviceInfoCompanion, UIOSInputOptions, UIOSKotlinArray<T>, UIOSKotlinByteArray, UIOSKotlinByteIterator, UIOSKotlinCancellationException, UIOSKotlinEnum<E>, UIOSKotlinEnumCompanion, UIOSKotlinException, UIOSKotlinIllegalStateException, UIOSKotlinNothing, UIOSKotlinRuntimeException, UIOSKotlinThrowable, UIOSKotlinUnit, UIOSKotlinx_serialization_coreSerialKind, UIOSKotlinx_serialization_coreSerializersModule, UIOSKotlinx_serialization_jsonJsonElement, UIOSKotlinx_serialization_jsonJsonElementCompanion, UIOSKtor_httpCookie, UIOSKtor_httpCookieCompanion, UIOSKtor_httpCookieEncoding, UIOSKtor_utilsGMTDate, UIOSKtor_utilsGMTDateCompanion, UIOSKtor_utilsMonth, UIOSKtor_utilsMonthCompanion, UIOSKtor_utilsWeekDay, UIOSKtor_utilsWeekDayCompanion, UIOSPageEvent, UIOSPageEventClosed, UIOSPageEventCreated, UIOSPageEventRaw, UIOSPageEventRequest, UIOSPageEventResponse, UIOSWaitForOptions, UIOSWorker, UIOSWorkerEvent, UIOSWorkerEventClosed, UIOSWorkerEventConnected, UIOSWorkerEventTerminated, UIViewController;
+@class UIOSAddress, UIOSAddressAddressType, UIOSAddressAddressTypeFactory, UIOSAddressCompanion, UIOSBrowserEvent, UIOSBrowserEventClosed, UIOSBrowserEventCreated, UIOSClickOptions, UIOSCoreEmitterEvent<T>, UIOSCoreResponse, UIOSDeviceInfo, UIOSDeviceInfoCompanion, UIOSInputOptions, UIOSKeyPair, UIOSKotlinArray<T>, UIOSKotlinByteArray, UIOSKotlinByteIterator, UIOSKotlinCancellationException, UIOSKotlinEnum<E>, UIOSKotlinEnumCompanion, UIOSKotlinException, UIOSKotlinIllegalStateException, UIOSKotlinNothing, UIOSKotlinRuntimeException, UIOSKotlinThrowable, UIOSKotlinUnit, UIOSKotlinx_serialization_coreSerialKind, UIOSKotlinx_serialization_coreSerializersModule, UIOSKotlinx_serialization_jsonJsonElement, UIOSKotlinx_serialization_jsonJsonElementCompanion, UIOSKtor_httpCookie, UIOSKtor_httpCookieCompanion, UIOSKtor_httpCookieEncoding, UIOSKtor_utilsGMTDate, UIOSKtor_utilsGMTDateCompanion, UIOSKtor_utilsMonth, UIOSKtor_utilsMonthCompanion, UIOSKtor_utilsWeekDay, UIOSKtor_utilsWeekDayCompanion, UIOSOptions, UIOSPageEvent, UIOSPageEventClosed, UIOSPageEventCreated, UIOSPageEventRaw, UIOSPageEventRequest, UIOSPageEventResponse, UIOSWaitForOptions, UIOSWorker, UIOSWorkerEvent, UIOSWorkerEventClosed, UIOSWorkerEventConnected, UIOSWorkerEventTerminated, UIViewController;
 
-@protocol BrowserFactoryProtocol, BrowserProtocol, EmitterProtocol, MuppetProtocol, PageFactoryBaseProtocol, PageProtocol, UIOSKotlinAnnotation, UIOSKotlinAutoCloseable, UIOSKotlinComparable, UIOSKotlinCoroutineContext, UIOSKotlinCoroutineContextElement, UIOSKotlinCoroutineContextKey, UIOSKotlinFunction, UIOSKotlinIterator, UIOSKotlinKAnnotatedElement, UIOSKotlinKClass, UIOSKotlinKClassifier, UIOSKotlinKDeclarationContainer, UIOSKotlinSequence, UIOSKotlinSuspendFunction1, UIOSKotlinx_coroutines_coreChildHandle, UIOSKotlinx_coroutines_coreChildJob, UIOSKotlinx_coroutines_coreDeferred, UIOSKotlinx_coroutines_coreDisposableHandle, UIOSKotlinx_coroutines_coreFlow, UIOSKotlinx_coroutines_coreFlowCollector, UIOSKotlinx_coroutines_coreJob, UIOSKotlinx_coroutines_coreParentJob, UIOSKotlinx_coroutines_coreSelectClause, UIOSKotlinx_coroutines_coreSelectClause0, UIOSKotlinx_coroutines_coreSelectClause1, UIOSKotlinx_coroutines_coreSelectInstance, UIOSKotlinx_coroutines_coreSharedFlow, UIOSKotlinx_serialization_coreCompositeDecoder, UIOSKotlinx_serialization_coreCompositeEncoder, UIOSKotlinx_serialization_coreDecoder, UIOSKotlinx_serialization_coreDeserializationStrategy, UIOSKotlinx_serialization_coreEncoder, UIOSKotlinx_serialization_coreKSerializer, UIOSKotlinx_serialization_coreSerialDescriptor, UIOSKotlinx_serialization_coreSerializationStrategy, UIOSKotlinx_serialization_coreSerializersModuleCollector, UIOSKtor_ioCloseable, UIOSKtor_ioJvmSerializable;
+@protocol BrowserFactoryProtocol, BrowserProtocol, EmitterProtocol, MuppetProtocol, PageFactoryBaseProtocol, PageProtocol, UIOSKey, UIOSKotlinAnnotation, UIOSKotlinAutoCloseable, UIOSKotlinComparable, UIOSKotlinCoroutineContext, UIOSKotlinCoroutineContextElement, UIOSKotlinCoroutineContextKey, UIOSKotlinFunction, UIOSKotlinIterator, UIOSKotlinKAnnotatedElement, UIOSKotlinKClass, UIOSKotlinKClassifier, UIOSKotlinKDeclarationContainer, UIOSKotlinSequence, UIOSKotlinSuspendFunction1, UIOSKotlinx_coroutines_coreChildHandle, UIOSKotlinx_coroutines_coreChildJob, UIOSKotlinx_coroutines_coreDeferred, UIOSKotlinx_coroutines_coreDisposableHandle, UIOSKotlinx_coroutines_coreFlow, UIOSKotlinx_coroutines_coreFlowCollector, UIOSKotlinx_coroutines_coreJob, UIOSKotlinx_coroutines_coreParentJob, UIOSKotlinx_coroutines_coreSelectClause, UIOSKotlinx_coroutines_coreSelectClause0, UIOSKotlinx_coroutines_coreSelectClause1, UIOSKotlinx_coroutines_coreSelectInstance, UIOSKotlinx_coroutines_coreSharedFlow, UIOSKotlinx_serialization_coreCompositeDecoder, UIOSKotlinx_serialization_coreCompositeEncoder, UIOSKotlinx_serialization_coreDecoder, UIOSKotlinx_serialization_coreDeserializationStrategy, UIOSKotlinx_serialization_coreEncoder, UIOSKotlinx_serialization_coreKSerializer, UIOSKotlinx_serialization_coreSerialDescriptor, UIOSKotlinx_serialization_coreSerializationStrategy, UIOSKotlinx_serialization_coreSerializersModuleCollector, UIOSKtor_ioCloseable, UIOSKtor_ioJvmSerializable;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -181,6 +181,7 @@ __attribute__((swift_name("Uplink")))
 @interface UIOSUplink : UIOSBase
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (id<UIOSKey>)importRawECDSAPublicKeyKey:(UIOSKotlinByteArray *)key __attribute__((swift_name("importRawECDSAPublicKey(key:)")));
 
 /**
  * Get a session url for clients and workers to join
@@ -302,6 +303,24 @@ __attribute__((swift_name("Address.AddressTypeFactory")))
 - (UIOSAddressAddressType * _Nullable)fromValueValue:(uint32_t)value __attribute__((swift_name("fromValue(value:)")));
 @end
 
+__attribute__((swift_name("Key")))
+@protocol UIOSKey
+@required
+@property (readonly) UIOSKotlinByteArray *raw __attribute__((swift_name("raw")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KeyPair")))
+@interface UIOSKeyPair : UIOSBase
+- (instancetype)initWithPrivateKey:(id<UIOSKey>)privateKey publicKey:(id<UIOSKey>)publicKey __attribute__((swift_name("init(privateKey:publicKey:)"))) __attribute__((objc_designated_initializer));
+- (UIOSKeyPair *)doCopyPrivateKey:(id<UIOSKey>)privateKey publicKey:(id<UIOSKey>)publicKey __attribute__((swift_name("doCopy(privateKey:publicKey:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) id<UIOSKey> privateKey __attribute__((swift_name("privateKey")));
+@property (readonly) id<UIOSKey> publicKey __attribute__((swift_name("publicKey")));
+@end
+
 __attribute__((swift_name("TransportProtocol")))
 @protocol UIOSTransportProtocol
 @required
@@ -377,10 +396,23 @@ __attribute__((swift_name("WorkerEvent.Terminated")))
 @property (readonly) UIOSAddress *address __attribute__((swift_name("address")));
 @end
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Options")))
+@interface UIOSOptions : UIOSBase
+- (instancetype)initWithTrusted:(NSArray<id<UIOSKey>> *)trusted ecdsa:(UIOSKeyPair * _Nullable)ecdsa ecdh:(UIOSKeyPair * _Nullable)ecdh streamKey:(id<UIOSKey> _Nullable)streamKey __attribute__((swift_name("init(trusted:ecdsa:ecdh:streamKey:)"))) __attribute__((objc_designated_initializer));
+- (UIOSOptions *)doCopyTrusted:(NSArray<id<UIOSKey>> *)trusted ecdsa:(UIOSKeyPair * _Nullable)ecdsa ecdh:(UIOSKeyPair * _Nullable)ecdh streamKey:(id<UIOSKey> _Nullable)streamKey __attribute__((swift_name("doCopy(trusted:ecdsa:ecdh:streamKey:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) UIOSKeyPair * _Nullable ecdh __attribute__((swift_name("ecdh")));
+@property (readonly) UIOSKeyPair * _Nullable ecdsa __attribute__((swift_name("ecdsa")));
+@property (readonly) id<UIOSKey> _Nullable streamKey __attribute__((swift_name("streamKey")));
+@property (readonly) NSArray<id<UIOSKey>> *trusted __attribute__((swift_name("trusted")));
+@end
+
 __attribute__((swift_name("Worker")))
 @interface UIOSWorker : UIOSBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithOptions:(UIOSOptions *)options __attribute__((swift_name("init(options:)"))) __attribute__((objc_designated_initializer));
 
 /** Start accepting commands. Blocks until close() completes or worker is terminated
  *
@@ -412,6 +444,26 @@ __attribute__((swift_name("Worker")))
  * @return DeviceInfo containing device-specific details
  */
 - (UIOSDeviceInfo *)info __attribute__((swift_name("info()")));
+
+/**
+ * Add ECDSA public key to trusted list
+ *
+ * @param key Raw ECDSA public key
+ *
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)trustKey:(id<UIOSKey>)key completionHandler:(void (^)(UIOSBoolean * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("trust(key:completionHandler:)")));
+
+/**
+ * List of trusted ECDSA public keys
+ *
+ * @return List<Key> List of trusted ECDSA public keys
+ *
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)trustedWithCompletionHandler:(void (^)(NSArray<id<UIOSKey>> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("trusted(completionHandler:)")));
 
 /**
  * Callback to watch WorkerEvents
@@ -640,6 +692,19 @@ __attribute__((swift_name("KotlinCancellationException")))
 - (instancetype)initWithMessage:(NSString * _Nullable)message cause:(UIOSKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
 @end
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinByteArray")))
+@interface UIOSKotlinByteArray : UIOSBase
++ (instancetype)arrayWithSize:(int32_t)size __attribute__((swift_name("init(size:)")));
++ (instancetype)arrayWithSize:(int32_t)size init:(UIOSByte *(^)(UIOSInt *))init __attribute__((swift_name("init(size:init:)")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (int8_t)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
+- (UIOSKotlinByteIterator *)iterator __attribute__((swift_name("iterator()")));
+- (void)setIndex:(int32_t)index value:(int8_t)value __attribute__((swift_name("set(index:value:)")));
+@property (readonly) int32_t size __attribute__((swift_name("size")));
+@end
+
 @protocol BrowserFactoryProtocol
 @required
 - (id<BrowserProtocol>)createMuppet:(id<MuppetProtocol>)muppet __attribute__((swift_name("create(muppet:)")));
@@ -798,6 +863,21 @@ __attribute__((swift_name("Kotlinx_serialization_coreDecoder")))
 @property (readonly) UIOSKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
 @end
 
+__attribute__((swift_name("KotlinIterator")))
+@protocol UIOSKotlinIterator
+@required
+- (BOOL)hasNext __attribute__((swift_name("hasNext()")));
+- (id _Nullable)next __attribute__((swift_name("next()")));
+@end
+
+__attribute__((swift_name("KotlinByteIterator")))
+@interface UIOSKotlinByteIterator : UIOSBase <UIOSKotlinIterator>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (UIOSByte *)next __attribute__((swift_name("next()")));
+- (int8_t)nextByte __attribute__((swift_name("nextByte()")));
+@end
+
 @protocol EmitterProtocol
 @required
 
@@ -861,13 +941,6 @@ __attribute__((swift_name("Kotlinx_serialization_coreDecoder")))
 - (id<PageProtocol> _Nullable)getPageHandle:(NSString *)handle __attribute__((swift_name("getPage(handle:)")));
 - (void)injectPage:(id<PageProtocol>)page factory:(id<BrowserFactoryProtocol>)factory __attribute__((swift_name("inject(page:factory:)")));
 - (id<BrowserProtocol>)launchFactory:(id<BrowserFactoryProtocol>)factory __attribute__((swift_name("launch(factory:)")));
-@end
-
-__attribute__((swift_name("KotlinIterator")))
-@protocol UIOSKotlinIterator
-@required
-- (BOOL)hasNext __attribute__((swift_name("hasNext()")));
-- (id _Nullable)next __attribute__((swift_name("next()")));
 @end
 
 __attribute__((swift_name("Kotlinx_coroutines_coreFlowCollector")))
@@ -1640,19 +1713,6 @@ __attribute__((swift_name("Kotlinx_coroutines_coreSelectClause1")))
 @required
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinByteArray")))
-@interface UIOSKotlinByteArray : UIOSBase
-+ (instancetype)arrayWithSize:(int32_t)size __attribute__((swift_name("init(size:)")));
-+ (instancetype)arrayWithSize:(int32_t)size init:(UIOSByte *(^)(UIOSInt *))init __attribute__((swift_name("init(size:init:)")));
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (int8_t)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
-- (UIOSKotlinByteIterator *)iterator __attribute__((swift_name("iterator()")));
-- (void)setIndex:(int32_t)index value:(int8_t)value __attribute__((swift_name("set(index:value:)")));
-@property (readonly) int32_t size __attribute__((swift_name("size")));
-@end
-
 
 /**
  * @note annotations
@@ -1789,14 +1849,6 @@ __attribute__((swift_name("Ktor_utilsGMTDate.Companion")))
  * [Report a problem](https://ktor.io/feedback/?fqname=io.ktor.util.date.GMTDate.Companion.START)
  */
 @property (readonly) UIOSKtor_utilsGMTDate *START __attribute__((swift_name("START")));
-@end
-
-__attribute__((swift_name("KotlinByteIterator")))
-@interface UIOSKotlinByteIterator : UIOSBase <UIOSKotlinIterator>
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (UIOSByte *)next __attribute__((swift_name("next()")));
-- (int8_t)nextByte __attribute__((swift_name("nextByte()")));
 @end
 
 __attribute__((objc_subclassing_restricted))
