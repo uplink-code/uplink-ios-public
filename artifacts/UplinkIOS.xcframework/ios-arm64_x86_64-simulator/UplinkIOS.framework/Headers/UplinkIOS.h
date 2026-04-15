@@ -399,11 +399,12 @@ __attribute__((swift_name("WorkerEvent.Terminated")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Options")))
 @interface UIOSOptions : UIOSBase
-- (instancetype)initWithTrusted:(NSArray<id<UIOSKey>> *)trusted ecdsa:(UIOSKeyPair * _Nullable)ecdsa ecdh:(UIOSKeyPair * _Nullable)ecdh streamKey:(id<UIOSKey> _Nullable)streamKey __attribute__((swift_name("init(trusted:ecdsa:ecdh:streamKey:)"))) __attribute__((objc_designated_initializer));
-- (UIOSOptions *)doCopyTrusted:(NSArray<id<UIOSKey>> *)trusted ecdsa:(UIOSKeyPair * _Nullable)ecdsa ecdh:(UIOSKeyPair * _Nullable)ecdh streamKey:(id<UIOSKey> _Nullable)streamKey __attribute__((swift_name("doCopy(trusted:ecdsa:ecdh:streamKey:)")));
+- (instancetype)initWithTrusted:(NSArray<id<UIOSKey>> *)trusted ecdsa:(UIOSKeyPair * _Nullable)ecdsa ecdh:(UIOSKeyPair * _Nullable)ecdh streamKey:(id<UIOSKey> _Nullable)streamKey apiHost:(NSString *)apiHost __attribute__((swift_name("init(trusted:ecdsa:ecdh:streamKey:apiHost:)"))) __attribute__((objc_designated_initializer));
+- (UIOSOptions *)doCopyTrusted:(NSArray<id<UIOSKey>> *)trusted ecdsa:(UIOSKeyPair * _Nullable)ecdsa ecdh:(UIOSKeyPair * _Nullable)ecdh streamKey:(id<UIOSKey> _Nullable)streamKey apiHost:(NSString *)apiHost __attribute__((swift_name("doCopy(trusted:ecdsa:ecdh:streamKey:apiHost:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
+@property NSString *apiHost __attribute__((swift_name("apiHost")));
 @property (readonly) UIOSKeyPair * _Nullable ecdh __attribute__((swift_name("ecdh")));
 @property (readonly) UIOSKeyPair * _Nullable ecdsa __attribute__((swift_name("ecdsa")));
 @property (readonly) id<UIOSKey> _Nullable streamKey __attribute__((swift_name("streamKey")));
@@ -474,6 +475,7 @@ __attribute__((swift_name("Worker")))
 @property (readonly) UIOSAddress *address __attribute__((swift_name("address")));
 @property NSString *deviceId __attribute__((swift_name("deviceId")));
 @property (readonly) id<UIOSKotlinx_coroutines_coreSharedFlow> events __attribute__((swift_name("events")));
+@property (readonly) UIOSOptions *options __attribute__((swift_name("options")));
 @end
 
 __attribute__((swift_name("BrowserEvent")))
