@@ -1434,12 +1434,6 @@ __attribute__((swift_name("CoreResponse")))
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSDictionary<NSString *, UIOSKotlinx_serialization_jsonJsonElement *> *)header __attribute__((swift_name("header()")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)jsonObjectWithCompletionHandler:(void (^)(NSDictionary<NSString *, UIOSKotlinx_serialization_jsonJsonElement *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("jsonObject(completionHandler:)")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) id<UIOSKotlinx_coroutines_coreFlow> body __attribute__((swift_name("body")));
 @property (readonly) NSDictionary<NSString *, NSArray<NSString *> *> *headers __attribute__((swift_name("headers")));
