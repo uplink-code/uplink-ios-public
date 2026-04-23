@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class UIOSAddress, UIOSAddressAddressType, UIOSAddressAddressTypeFactory, UIOSAddressCompanion, UIOSBrowserEvent, UIOSBrowserEventClosed, UIOSBrowserEventCreated, UIOSClickOptions, UIOSCoreEmitterEvent<T>, UIOSCoreResponse, UIOSDeviceInfo, UIOSDeviceInfoCompanion, UIOSInputOptions, UIOSKeyPair, UIOSKotlinArray<T>, UIOSKotlinByteArray, UIOSKotlinByteIterator, UIOSKotlinCancellationException, UIOSKotlinEnum<E>, UIOSKotlinEnumCompanion, UIOSKotlinException, UIOSKotlinIllegalStateException, UIOSKotlinNothing, UIOSKotlinRuntimeException, UIOSKotlinThrowable, UIOSKotlinUnit, UIOSKotlinx_serialization_coreSerialKind, UIOSKotlinx_serialization_coreSerializersModule, UIOSKotlinx_serialization_jsonJsonElement, UIOSKotlinx_serialization_jsonJsonElementCompanion, UIOSKtor_httpCookie, UIOSKtor_httpCookieCompanion, UIOSKtor_httpCookieEncoding, UIOSKtor_utilsGMTDate, UIOSKtor_utilsGMTDateCompanion, UIOSKtor_utilsMonth, UIOSKtor_utilsMonthCompanion, UIOSKtor_utilsWeekDay, UIOSKtor_utilsWeekDayCompanion, UIOSOptions, UIOSPageEvent, UIOSPageEventClosed, UIOSPageEventCreated, UIOSPageEventRaw, UIOSPageEventRequest, UIOSPageEventResponse, UIOSWaitForOptions, UIOSWorker, UIOSWorkerEvent, UIOSWorkerEventClosed, UIOSWorkerEventConnected, UIOSWorkerEventTerminated, UIViewController;
+@class Browser, BrowserBase<T>, UINavigationController, UIOSAddress, UIOSAddressAddressType, UIOSAddressAddressTypeFactory, UIOSAddressCompanion, UIOSBrowserEvent, UIOSBrowserEventClosed, UIOSBrowserEventCreated, UIOSClickOptions, UIOSCoreEmitter<T>, UIOSCoreEmitterEvent<T>, UIOSCoreResponse, UIOSDeviceInfo, UIOSDeviceInfoCompanion, UIOSInputOptions, UIOSKeyPair, UIOSKotlinArray<T>, UIOSKotlinByteArray, UIOSKotlinByteIterator, UIOSKotlinCancellationException, UIOSKotlinEnum<E>, UIOSKotlinEnumCompanion, UIOSKotlinException, UIOSKotlinIllegalStateException, UIOSKotlinNothing, UIOSKotlinRuntimeException, UIOSKotlinThrowable, UIOSKotlinUnit, UIOSKotlinx_serialization_coreSerialKind, UIOSKotlinx_serialization_coreSerializersModule, UIOSKotlinx_serialization_jsonJsonElement, UIOSKotlinx_serialization_jsonJsonElementCompanion, UIOSKtor_httpCookie, UIOSKtor_httpCookieCompanion, UIOSKtor_httpCookieEncoding, UIOSKtor_utilsGMTDate, UIOSKtor_utilsGMTDateCompanion, UIOSKtor_utilsMonth, UIOSKtor_utilsMonthCompanion, UIOSKtor_utilsWeekDay, UIOSKtor_utilsWeekDayCompanion, UIOSOptions, UIOSPageEvent, UIOSPageEventClosed, UIOSPageEventCreated, UIOSPageEventRaw, UIOSPageEventRequest, UIOSPageEventResponse, UIOSWaitForOptions, UIOSWorker, UIOSWorkerEvent, UIOSWorkerEventClosed, UIOSWorkerEventConnected, UIOSWorkerEventTerminated, UIViewController, WKWebView, WKWebViewConfiguration;
 
-@protocol BrowserFactoryProtocol, BrowserProtocol, EmitterProtocol, MuppetProtocol, PageFactoryBaseProtocol, PageProtocol, UIOSKey, UIOSKotlinAnnotation, UIOSKotlinAutoCloseable, UIOSKotlinComparable, UIOSKotlinCoroutineContext, UIOSKotlinCoroutineContextElement, UIOSKotlinCoroutineContextKey, UIOSKotlinFunction, UIOSKotlinIterator, UIOSKotlinKAnnotatedElement, UIOSKotlinKClass, UIOSKotlinKClassifier, UIOSKotlinKDeclarationContainer, UIOSKotlinSequence, UIOSKotlinSuspendFunction1, UIOSKotlinx_coroutines_coreChildHandle, UIOSKotlinx_coroutines_coreChildJob, UIOSKotlinx_coroutines_coreDeferred, UIOSKotlinx_coroutines_coreDisposableHandle, UIOSKotlinx_coroutines_coreFlow, UIOSKotlinx_coroutines_coreFlowCollector, UIOSKotlinx_coroutines_coreJob, UIOSKotlinx_coroutines_coreParentJob, UIOSKotlinx_coroutines_coreSelectClause, UIOSKotlinx_coroutines_coreSelectClause0, UIOSKotlinx_coroutines_coreSelectClause1, UIOSKotlinx_coroutines_coreSelectInstance, UIOSKotlinx_coroutines_coreSharedFlow, UIOSKotlinx_serialization_coreCompositeDecoder, UIOSKotlinx_serialization_coreCompositeEncoder, UIOSKotlinx_serialization_coreDecoder, UIOSKotlinx_serialization_coreDeserializationStrategy, UIOSKotlinx_serialization_coreEncoder, UIOSKotlinx_serialization_coreKSerializer, UIOSKotlinx_serialization_coreSerialDescriptor, UIOSKotlinx_serialization_coreSerializationStrategy, UIOSKotlinx_serialization_coreSerializersModuleCollector, UIOSKtor_ioCloseable, UIOSKtor_ioJvmSerializable;
+@protocol BrowserFactoryProtocol, BrowserProtocol, EmitterProtocol, MuppetProtocol, PageFactoryBaseProtocol, PageFactoryProtocol, PageProtocol, UIOSKey, UIOSKotlinAnnotation, UIOSKotlinAutoCloseable, UIOSKotlinComparable, UIOSKotlinCoroutineContext, UIOSKotlinCoroutineContextElement, UIOSKotlinCoroutineContextKey, UIOSKotlinFunction, UIOSKotlinIterator, UIOSKotlinKAnnotatedElement, UIOSKotlinKClass, UIOSKotlinKClassifier, UIOSKotlinKDeclarationContainer, UIOSKotlinSequence, UIOSKotlinSuspendFunction1, UIOSKotlinx_coroutines_coreChildHandle, UIOSKotlinx_coroutines_coreChildJob, UIOSKotlinx_coroutines_coreDeferred, UIOSKotlinx_coroutines_coreDisposableHandle, UIOSKotlinx_coroutines_coreFlow, UIOSKotlinx_coroutines_coreFlowCollector, UIOSKotlinx_coroutines_coreJob, UIOSKotlinx_coroutines_coreParentJob, UIOSKotlinx_coroutines_coreSelectClause, UIOSKotlinx_coroutines_coreSelectClause0, UIOSKotlinx_coroutines_coreSelectClause1, UIOSKotlinx_coroutines_coreSelectInstance, UIOSKotlinx_coroutines_coreSharedFlow, UIOSKotlinx_serialization_coreCompositeDecoder, UIOSKotlinx_serialization_coreCompositeEncoder, UIOSKotlinx_serialization_coreDecoder, UIOSKotlinx_serialization_coreDeserializationStrategy, UIOSKotlinx_serialization_coreEncoder, UIOSKotlinx_serialization_coreKSerializer, UIOSKotlinx_serialization_coreSerialDescriptor, UIOSKotlinx_serialization_coreSerializationStrategy, UIOSKotlinx_serialization_coreSerializersModuleCollector, UIOSKtor_ioCloseable, UIOSKtor_ioJvmSerializable;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -213,6 +213,18 @@ __attribute__((swift_name("Uplink")))
  * @return Worker
  */
 - (UIOSWorker *)workerController:(UIViewController *)controller __attribute__((swift_name("worker(controller:)")));
+
+/**
+ * Create an Uplink Worker with a specific browser previously created
+ *
+ * @param controller UIViewController hosting the WKWebViews
+ * @param browser financial.atomic.muppet.Browser
+ * @return Worker
+ *
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)workerWithBrowserController:(UIViewController *)controller browser:(Browser *)browser completionHandler:(void (^)(UIOSWorker * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("workerWithBrowser(controller:browser:completionHandler:)")));
 
 /**
  * Create an Uplink Worker to accept commands from a client
@@ -707,6 +719,161 @@ __attribute__((swift_name("KotlinByteArray")))
 @property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
+@protocol EmitterProtocol
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitEvent:(UIOSCoreEmitterEvent<id> *)event completionHandler:(void (^)(UIOSCoreEmitterEvent<id> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(event:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type data:(id _Nullable)data completionHandler:(void (^)(UIOSCoreEmitterEvent<id> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(type:data:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitType:(NSString *)type data:(id _Nullable)data completionHandler_:(void (^)(UIOSCoreEmitterEvent<id> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(type:data:completionHandler_:)")));
+- (void)offJob:(id<UIOSKotlinx_coroutines_coreJob>)job __attribute__((swift_name("off(job:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type handler:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:handler:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onType:(NSString *)type handler_:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:handler_:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onceType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type handler:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("once(type:handler:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onceType:(NSString *)type handler_:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("once(type:handler_:)")));
+@property (readonly) id<UIOSKotlinx_coroutines_coreFlow> events __attribute__((swift_name("events")));
+@end
+
+__attribute__((swift_name("CoreEmitter")))
+@interface UIOSCoreEmitter<T> : UIOSBase <EmitterProtocol>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitEvent:(UIOSCoreEmitterEvent<T> *)event completionHandler:(void (^)(UIOSCoreEmitterEvent<T> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(event:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type data:(T _Nullable)data completionHandler:(void (^)(UIOSCoreEmitterEvent<T> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(type:data:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitType:(NSString *)type data:(T _Nullable)data completionHandler_:(void (^)(UIOSCoreEmitterEvent<T> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(type:data:completionHandler_:)")));
+- (void)offJob:(id<UIOSKotlinx_coroutines_coreJob>)job __attribute__((swift_name("off(job:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type handler:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:handler:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onType:(NSString *)type handler_:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:handler_:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onceType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type handler:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("once(type:handler:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)onceType:(NSString *)type handler_:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("once(type:handler_:)")));
+@property (readonly) id<UIOSKotlinx_coroutines_coreSharedFlow> events __attribute__((swift_name("events")));
+@end
+
+@protocol BrowserProtocol <EmitterProtocol>
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)closeWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("close(completionHandler:)")));
+- (NSString *)handle __attribute__((swift_name("handle()")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)PageWithCompletionHandler:(void (^)(id<PageProtocol> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("Page(completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)PageFactory:(id<PageFactoryBaseProtocol>)factory completionHandler:(void (^)(id<PageProtocol> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("Page(factory:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)PageFactory:(id<PageProtocol> (^)(id<BrowserProtocol>))factory completionHandler_:(void (^)(id<PageProtocol> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("Page(factory:completionHandler_:)")));
+- (NSArray<id<PageProtocol>> *)pages __attribute__((swift_name("pages()")));
+@end
+
+@interface BrowserBase<T> : UIOSCoreEmitter<id> <BrowserProtocol>
+- (instancetype)initWithFactory:(id<PageFactoryBaseProtocol>)factory __attribute__((swift_name("init(factory:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)new __attribute__((unavailable));
+
+/**
+ * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+- (void)addPagePage:(id<PageProtocol>)page __attribute__((swift_name("addPage(page:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)closeWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("close(completionHandler:)")));
+- (NSString *)handle __attribute__((swift_name("handle()")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)PageWithCompletionHandler:(void (^)(id<PageProtocol> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("Page(completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)PageFactory:(id<PageFactoryBaseProtocol>)factory completionHandler:(void (^)(id<PageProtocol> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("Page(factory:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)PageFactory:(id<PageProtocol> (^)(id<BrowserProtocol>))factory completionHandler_:(void (^)(id<PageProtocol> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("Page(factory:completionHandler_:)")));
+- (NSArray<id<PageProtocol>> *)pages __attribute__((swift_name("pages()")));
+
+/**
+ * @note This method has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+- (void)removePagePage:(id<PageProtocol>)page keep:(BOOL)keep __attribute__((swift_name("removePage(page:keep:)")));
+
+/**
+ * @note This property has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+@property (readonly) NSMutableArray<id<PageProtocol>> *_pages __attribute__((swift_name("_pages")));
+
+/**
+ * @note This property has protected visibility in Kotlin source and is intended only for use by subclasses.
+*/
+@property (readonly) id<PageFactoryBaseProtocol> factory __attribute__((swift_name("factory")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+@interface Browser : BrowserBase<WKWebView *> <BrowserProtocol>
+- (instancetype)initWithController:(UIViewController *)controller factory:(id<PageFactoryProtocol>)factory __attribute__((swift_name("init(controller:factory:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithFactory:(id<PageFactoryBaseProtocol>)factory __attribute__((swift_name("init(factory:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (id<PageProtocol>)PageConfiguration:(WKWebViewConfiguration *)configuration __attribute__((swift_name("Page(configuration:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)showController:(UIViewController *)controller animate:(BOOL)animate completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("show(controller:animate:completionHandler:)")));
+@property (readonly) UIViewController *controller __attribute__((swift_name("controller")));
+@property (readonly) UINavigationController * _Nullable group __attribute__((swift_name("group")));
+@end
+
 @protocol BrowserFactoryProtocol
 @required
 - (id<BrowserProtocol>)createMuppet:(id<MuppetProtocol>)muppet __attribute__((swift_name("create(muppet:)")));
@@ -880,62 +1047,189 @@ __attribute__((swift_name("KotlinByteIterator")))
 - (int8_t)nextByte __attribute__((swift_name("nextByte()")));
 @end
 
-@protocol EmitterProtocol
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.3")
+*/
+__attribute__((swift_name("KotlinCoroutineContext")))
+@protocol UIOSKotlinCoroutineContext
 @required
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)emitEvent:(UIOSCoreEmitterEvent<id> *)event completionHandler:(void (^)(UIOSCoreEmitterEvent<id> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(event:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)emitType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type data:(id _Nullable)data completionHandler:(void (^)(UIOSCoreEmitterEvent<id> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(type:data:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)emitType:(NSString *)type data:(id _Nullable)data completionHandler_:(void (^)(UIOSCoreEmitterEvent<id> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(type:data:completionHandler_:)")));
-- (void)offJob:(id<UIOSKotlinx_coroutines_coreJob>)job __attribute__((swift_name("off(job:)")));
-- (id<UIOSKotlinx_coroutines_coreJob>)onType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type handler:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:handler:)")));
-- (id<UIOSKotlinx_coroutines_coreJob>)onType:(NSString *)type handler_:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("on(type:handler_:)")));
-- (id<UIOSKotlinx_coroutines_coreJob>)onceType:(UIOSKotlinEnum<UIOSKotlinEnum *> *)type handler:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("once(type:handler:)")));
-- (id<UIOSKotlinx_coroutines_coreJob>)onceType:(NSString *)type handler_:(id<UIOSKotlinSuspendFunction1>)handler __attribute__((swift_name("once(type:handler_:)")));
-@property (readonly) id<UIOSKotlinx_coroutines_coreFlow> events __attribute__((swift_name("events")));
+- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<UIOSKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
+- (id<UIOSKotlinCoroutineContextElement> _Nullable)getKey:(id<UIOSKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
+- (id<UIOSKotlinCoroutineContext>)minusKeyKey:(id<UIOSKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
+- (id<UIOSKotlinCoroutineContext>)plusContext:(id<UIOSKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
 @end
 
-@protocol BrowserProtocol <EmitterProtocol>
+__attribute__((swift_name("KotlinCoroutineContextElement")))
+@protocol UIOSKotlinCoroutineContextElement <UIOSKotlinCoroutineContext>
+@required
+@property (readonly) id<UIOSKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
+@end
+
+__attribute__((swift_name("Kotlinx_coroutines_coreJob")))
+@protocol UIOSKotlinx_coroutines_coreJob <UIOSKotlinCoroutineContextElement>
+@required
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (id<UIOSKotlinx_coroutines_coreChildHandle>)attachChildChild:(id<UIOSKotlinx_coroutines_coreChildJob>)child __attribute__((swift_name("attachChild(child:)")));
+- (void)cancelCause:(UIOSKotlinCancellationException * _Nullable)cause __attribute__((swift_name("cancel(cause:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (UIOSKotlinCancellationException *)getCancellationException __attribute__((swift_name("getCancellationException()")));
+- (id<UIOSKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionHandler:(void (^)(UIOSKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(handler:)")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.InternalCoroutinesApi
+*/
+- (id<UIOSKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionOnCancelling:(BOOL)onCancelling invokeImmediately:(BOOL)invokeImmediately handler:(void (^)(UIOSKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(onCancelling:invokeImmediately:handler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)joinWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("join(completionHandler:)")));
+- (id<UIOSKotlinx_coroutines_coreJob>)plusOther:(id<UIOSKotlinx_coroutines_coreJob>)other __attribute__((swift_name("plus(other:)"))) __attribute__((unavailable("Operator '+' on two Job objects is meaningless. Job is a coroutine context element and `+` is a set-sum operator for coroutine contexts. The job to the right of `+` just replaces the job the left of `+`.")));
+- (BOOL)start __attribute__((swift_name("start()")));
+@property (readonly) id<UIOSKotlinSequence> children __attribute__((swift_name("children")));
+@property (readonly) BOOL isActive __attribute__((swift_name("isActive")));
+@property (readonly) BOOL isCancelled __attribute__((swift_name("isCancelled")));
+@property (readonly) BOOL isCompleted __attribute__((swift_name("isCompleted")));
+@property (readonly) id<UIOSKotlinx_coroutines_coreSelectClause0> onJoin __attribute__((swift_name("onJoin")));
+
+/**
+ * @note annotations
+ *   kotlinx.coroutines.ExperimentalCoroutinesApi
+*/
+@property (readonly) id<UIOSKotlinx_coroutines_coreJob> _Nullable parent __attribute__((swift_name("parent")));
+@end
+
+__attribute__((swift_name("KotlinFunction")))
+@protocol UIOSKotlinFunction
+@required
+@end
+
+__attribute__((swift_name("KotlinSuspendFunction1")))
+@protocol UIOSKotlinSuspendFunction1 <UIOSKotlinFunction>
 @required
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)closeWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("close(completionHandler:)")));
+- (void)invokeP1:(id _Nullable)p1 completionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("invoke(p1:completionHandler:)")));
+@end
+
+@protocol PageProtocol <EmitterProtocol>
+@required
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)addUserScriptScript:(NSString *)script completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("addUserScript(script:completionHandler:)")));
+- (void)clearHostAllowList __attribute__((swift_name("clearHostAllowList()")));
+- (void)close __attribute__((swift_name("close()")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)cookiesUrl:(NSString *)url completionHandler:(void (^)(NSArray<UIOSKtor_httpCookie *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("cookies(url:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)evaluateJs:(NSString *)js completionHandler:(void (^)(id<UIOSKotlinx_coroutines_coreDeferred> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("evaluate(js:completionHandler:)")));
+- (void)evaluateJs:(NSString *)js handler:(void (^)(NSString * _Nullable))handler __attribute__((swift_name("evaluate(js:handler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)gotoUrl:(NSString *)url headers:(NSDictionary<NSString *, NSString *> *)headers timeout:(int64_t)timeout completionHandler:(void (^)(id<UIOSKotlinx_coroutines_coreDeferred> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("goto(url:headers:timeout:completionHandler:)")));
 - (NSString *)handle __attribute__((swift_name("handle()")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)PageWithCompletionHandler:(void (^)(id<PageProtocol> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("Page(completionHandler:)")));
+- (void)hideAnimate:(BOOL)animate completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("hide(animate:completionHandler:)")));
+- (id<PageProtocol> _Nullable)parent_ __attribute__((swift_name("parent()")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)PageFactory:(id<PageFactoryBaseProtocol>)factory completionHandler:(void (^)(id<PageProtocol> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("Page(factory:completionHandler:)")));
+- (void)progressWithCompletionHandler:(void (^)(UIOSInt * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("progress(completionHandler:)")));
 
 /**
  * @note This method converts instances of CancellationException to errors.
  * Other uncaught Kotlin exceptions are fatal.
 */
-- (void)PageFactory:(id<PageProtocol> (^)(id<BrowserProtocol>))factory completionHandler_:(void (^)(id<PageProtocol> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("Page(factory:completionHandler_:)")));
-- (NSArray<id<PageProtocol>> *)pages __attribute__((swift_name("pages()")));
+- (void)requestMethod:(NSString *)method url:(NSString *)url data:(NSString * _Nullable)data headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers followRedirects:(BOOL)followRedirects stream:(id<UIOSKotlinx_coroutines_coreFlow> _Nullable)stream completionHandler:(void (^)(UIOSCoreResponse * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("request(method:url:data:headers:followRedirects:stream:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)screenshotWidth:(int32_t)width height:(int32_t)height quality:(double)quality completionHandler:(void (^)(NSString * _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("screenshot(width:height:quality:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)setCookieCookie:(UIOSKtor_httpCookie *)cookie completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("setCookie(cookie:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)setCookieCookies:(NSArray<UIOSKtor_httpCookie *> *)cookies completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("setCookie(cookies:completionHandler:)")));
+- (void)setHostAllowListAllowed:(NSArray<NSString *> *)allowed __attribute__((swift_name("setHostAllowList(allowed:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)setUserAgentUserAgent:(NSString *)userAgent completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("setUserAgent(userAgent:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)showAnimate:(BOOL)animate completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("show(animate:completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)urlWithCompletionHandler:(void (^)(NSString * _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("url(completionHandler:)")));
+
+/**
+ * @note This method converts instances of CancellationException to errors.
+ * Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)userAgentWithCompletionHandler:(void (^)(NSString * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("userAgent(completionHandler:)")));
+- (id _Nullable)view __attribute__((swift_name("view()")));
+@end
+
+@protocol PageFactoryBaseProtocol
+@required
+- (id<PageProtocol>)createBrowser:(id<BrowserProtocol>)browser __attribute__((swift_name("create(browser:)")));
+@end
+
+@protocol PageFactoryProtocol <PageFactoryBaseProtocol>
+@required
+- (id<PageProtocol>)createBrowser:(id<BrowserProtocol>)browser configuration:(WKWebViewConfiguration *)configuration __attribute__((swift_name("create(browser:configuration:)")));
 @end
 
 @protocol MuppetProtocol
@@ -1062,233 +1356,78 @@ __attribute__((swift_name("KotlinNothing")))
 @interface UIOSKotlinNothing : UIOSBase
 @end
 
-@protocol PageProtocol <EmitterProtocol>
+__attribute__((swift_name("Kotlinx_coroutines_coreDisposableHandle")))
+@protocol UIOSKotlinx_coroutines_coreDisposableHandle
 @required
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)addUserScriptScript:(NSString *)script completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("addUserScript(script:completionHandler:)")));
-- (void)clearHostAllowList __attribute__((swift_name("clearHostAllowList()")));
-- (void)close __attribute__((swift_name("close()")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)cookiesUrl:(NSString *)url completionHandler:(void (^)(NSArray<UIOSKtor_httpCookie *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("cookies(url:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)evaluateJs:(NSString *)js completionHandler:(void (^)(id<UIOSKotlinx_coroutines_coreDeferred> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("evaluate(js:completionHandler:)")));
-- (void)evaluateJs:(NSString *)js handler:(void (^)(NSString * _Nullable))handler __attribute__((swift_name("evaluate(js:handler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)gotoUrl:(NSString *)url headers:(NSDictionary<NSString *, NSString *> *)headers timeout:(int64_t)timeout completionHandler:(void (^)(id<UIOSKotlinx_coroutines_coreDeferred> _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("goto(url:headers:timeout:completionHandler:)")));
-- (NSString *)handle __attribute__((swift_name("handle()")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)hideAnimate:(BOOL)animate completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("hide(animate:completionHandler:)")));
-- (id<PageProtocol> _Nullable)parent __attribute__((swift_name("parent()")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)progressWithCompletionHandler:(void (^)(UIOSInt * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("progress(completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)requestMethod:(NSString *)method url:(NSString *)url data:(NSString * _Nullable)data headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers followRedirects:(BOOL)followRedirects stream:(id<UIOSKotlinx_coroutines_coreFlow> _Nullable)stream completionHandler:(void (^)(UIOSCoreResponse * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("request(method:url:data:headers:followRedirects:stream:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)screenshotWidth:(int32_t)width height:(int32_t)height quality:(double)quality completionHandler:(void (^)(NSString * _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("screenshot(width:height:quality:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)setCookieCookie:(UIOSKtor_httpCookie *)cookie completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("setCookie(cookie:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)setCookieCookies:(NSArray<UIOSKtor_httpCookie *> *)cookies completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("setCookie(cookies:completionHandler:)")));
-- (void)setHostAllowListAllowed:(NSArray<NSString *> *)allowed __attribute__((swift_name("setHostAllowList(allowed:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)setUserAgentUserAgent:(NSString *)userAgent completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("setUserAgent(userAgent:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)showAnimate:(BOOL)animate completionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("show(animate:completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)urlWithCompletionHandler:(void (^)(NSString * _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("url(completionHandler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)userAgentWithCompletionHandler:(void (^)(NSString * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("userAgent(completionHandler:)")));
-- (id _Nullable)view __attribute__((swift_name("view()")));
-@end
-
-@protocol PageFactoryBaseProtocol
-@required
-- (id<PageProtocol>)createBrowser:(id<BrowserProtocol>)browser __attribute__((swift_name("create(browser:)")));
+- (void)dispose __attribute__((swift_name("dispose()")));
 @end
 
 
 /**
  * @note annotations
- *   kotlin.SinceKotlin(version="1.3")
+ *   kotlinx.coroutines.InternalCoroutinesApi
 */
-__attribute__((swift_name("KotlinCoroutineContext")))
-@protocol UIOSKotlinCoroutineContext
-@required
-- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<UIOSKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
-- (id<UIOSKotlinCoroutineContextElement> _Nullable)getKey:(id<UIOSKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
-- (id<UIOSKotlinCoroutineContext>)minusKeyKey:(id<UIOSKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
-- (id<UIOSKotlinCoroutineContext>)plusContext:(id<UIOSKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
-@end
-
-__attribute__((swift_name("KotlinCoroutineContextElement")))
-@protocol UIOSKotlinCoroutineContextElement <UIOSKotlinCoroutineContext>
-@required
-@property (readonly) id<UIOSKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreJob")))
-@protocol UIOSKotlinx_coroutines_coreJob <UIOSKotlinCoroutineContextElement>
+__attribute__((swift_name("Kotlinx_coroutines_coreChildHandle")))
+@protocol UIOSKotlinx_coroutines_coreChildHandle <UIOSKotlinx_coroutines_coreDisposableHandle>
 @required
 
 /**
  * @note annotations
  *   kotlinx.coroutines.InternalCoroutinesApi
 */
-- (id<UIOSKotlinx_coroutines_coreChildHandle>)attachChildChild:(id<UIOSKotlinx_coroutines_coreChildJob>)child __attribute__((swift_name("attachChild(child:)")));
-- (void)cancelCause:(UIOSKotlinCancellationException * _Nullable)cause __attribute__((swift_name("cancel(cause:)")));
+- (BOOL)childCancelledCause:(UIOSKotlinThrowable *)cause __attribute__((swift_name("childCancelled(cause:)")));
 
 /**
  * @note annotations
  *   kotlinx.coroutines.InternalCoroutinesApi
 */
-- (UIOSKotlinCancellationException *)getCancellationException __attribute__((swift_name("getCancellationException()")));
-- (id<UIOSKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionHandler:(void (^)(UIOSKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(handler:)")));
+@property (readonly) id<UIOSKotlinx_coroutines_coreJob> _Nullable parent __attribute__((swift_name("parent")));
+@end
+
 
 /**
  * @note annotations
  *   kotlinx.coroutines.InternalCoroutinesApi
 */
-- (id<UIOSKotlinx_coroutines_coreDisposableHandle>)invokeOnCompletionOnCancelling:(BOOL)onCancelling invokeImmediately:(BOOL)invokeImmediately handler:(void (^)(UIOSKotlinThrowable * _Nullable))handler __attribute__((swift_name("invokeOnCompletion(onCancelling:invokeImmediately:handler:)")));
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)joinWithCompletionHandler:(void (^)(NSError * _Nullable))completionHandler __attribute__((swift_name("join(completionHandler:)")));
-- (id<UIOSKotlinx_coroutines_coreJob>)plusOther:(id<UIOSKotlinx_coroutines_coreJob>)other __attribute__((swift_name("plus(other:)"))) __attribute__((unavailable("Operator '+' on two Job objects is meaningless. Job is a coroutine context element and `+` is a set-sum operator for coroutine contexts. The job to the right of `+` just replaces the job the left of `+`.")));
-- (BOOL)start __attribute__((swift_name("start()")));
-@property (readonly) id<UIOSKotlinSequence> children __attribute__((swift_name("children")));
-@property (readonly) BOOL isActive __attribute__((swift_name("isActive")));
-@property (readonly) BOOL isCancelled __attribute__((swift_name("isCancelled")));
-@property (readonly) BOOL isCompleted __attribute__((swift_name("isCompleted")));
-@property (readonly) id<UIOSKotlinx_coroutines_coreSelectClause0> onJoin __attribute__((swift_name("onJoin")));
+__attribute__((swift_name("Kotlinx_coroutines_coreChildJob")))
+@protocol UIOSKotlinx_coroutines_coreChildJob <UIOSKotlinx_coroutines_coreJob>
+@required
 
 /**
  * @note annotations
- *   kotlinx.coroutines.ExperimentalCoroutinesApi
+ *   kotlinx.coroutines.InternalCoroutinesApi
 */
-@property (readonly, getter=parent_) id<UIOSKotlinx_coroutines_coreJob> _Nullable parent __attribute__((swift_name("parent")));
+- (void)parentCancelledParentJob:(id<UIOSKotlinx_coroutines_coreParentJob>)parentJob __attribute__((swift_name("parentCancelled(parentJob:)")));
 @end
 
-__attribute__((swift_name("KotlinFunction")))
-@protocol UIOSKotlinFunction
+__attribute__((swift_name("KotlinSequence")))
+@protocol UIOSKotlinSequence
 @required
-@end
-
-__attribute__((swift_name("KotlinSuspendFunction1")))
-@protocol UIOSKotlinSuspendFunction1 <UIOSKotlinFunction>
-@required
-
-/**
- * @note This method converts instances of CancellationException to errors.
- * Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)invokeP1:(id _Nullable)p1 completionHandler:(void (^)(id _Nullable_result, NSError * _Nullable))completionHandler __attribute__((swift_name("invoke(p1:completionHandler:)")));
+- (id<UIOSKotlinIterator>)iterator __attribute__((swift_name("iterator()")));
 @end
 
 
 /**
  * @note annotations
- *   kotlinx.serialization.ExperimentalSerializationApi
+ *   kotlinx.coroutines.InternalCoroutinesApi
 */
-__attribute__((swift_name("Kotlinx_serialization_coreSerializersModuleCollector")))
-@protocol UIOSKotlinx_serialization_coreSerializersModuleCollector
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause")))
+@protocol UIOSKotlinx_coroutines_coreSelectClause
 @required
-- (void)contextualKClass:(id<UIOSKotlinKClass>)kClass provider:(id<UIOSKotlinx_serialization_coreKSerializer> (^)(NSArray<id<UIOSKotlinx_serialization_coreKSerializer>> *))provider __attribute__((swift_name("contextual(kClass:provider:)")));
-- (void)contextualKClass:(id<UIOSKotlinKClass>)kClass serializer:(id<UIOSKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("contextual(kClass:serializer:)")));
-- (void)polymorphicBaseClass:(id<UIOSKotlinKClass>)baseClass actualClass:(id<UIOSKotlinKClass>)actualClass actualSerializer:(id<UIOSKotlinx_serialization_coreKSerializer>)actualSerializer __attribute__((swift_name("polymorphic(baseClass:actualClass:actualSerializer:)")));
-- (void)polymorphicDefaultBaseClass:(id<UIOSKotlinKClass>)baseClass defaultDeserializerProvider:(id<UIOSKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefault(baseClass:defaultDeserializerProvider:)"))) __attribute__((deprecated("Deprecated in favor of function with more precise name: polymorphicDefaultDeserializer")));
-- (void)polymorphicDefaultDeserializerBaseClass:(id<UIOSKotlinKClass>)baseClass defaultDeserializerProvider:(id<UIOSKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefaultDeserializer(baseClass:defaultDeserializerProvider:)")));
-- (void)polymorphicDefaultSerializerBaseClass:(id<UIOSKotlinKClass>)baseClass defaultSerializerProvider:(id<UIOSKotlinx_serialization_coreSerializationStrategy> _Nullable (^)(id))defaultSerializerProvider __attribute__((swift_name("polymorphicDefaultSerializer(baseClass:defaultSerializerProvider:)")));
+@property (readonly) id clauseObject __attribute__((swift_name("clauseObject")));
+@property (readonly) UIOSKotlinUnit *(^(^ _Nullable onCancellationConstructor)(id<UIOSKotlinx_coroutines_coreSelectInstance>, id _Nullable, id _Nullable))(UIOSKotlinThrowable *, id _Nullable, id<UIOSKotlinCoroutineContext>) __attribute__((swift_name("onCancellationConstructor")));
+@property (readonly) id _Nullable (^processResFunc)(id, id _Nullable, id _Nullable) __attribute__((swift_name("processResFunc")));
+@property (readonly) void (^regFunc)(id, id<UIOSKotlinx_coroutines_coreSelectInstance>, id _Nullable) __attribute__((swift_name("regFunc")));
 @end
 
-__attribute__((swift_name("KotlinKDeclarationContainer")))
-@protocol UIOSKotlinKDeclarationContainer
-@required
-@end
-
-__attribute__((swift_name("KotlinKAnnotatedElement")))
-@protocol UIOSKotlinKAnnotatedElement
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause0")))
+@protocol UIOSKotlinx_coroutines_coreSelectClause0 <UIOSKotlinx_coroutines_coreSelectClause>
 @required
 @end
 
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="1.1")
-*/
-__attribute__((swift_name("KotlinKClassifier")))
-@protocol UIOSKotlinKClassifier
+__attribute__((swift_name("KotlinCoroutineContextKey")))
+@protocol UIOSKotlinCoroutineContextKey
 @required
-@end
-
-__attribute__((swift_name("KotlinKClass")))
-@protocol UIOSKotlinKClass <UIOSKotlinKDeclarationContainer, UIOSKotlinKAnnotatedElement, UIOSKotlinKClassifier>
-@required
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="1.1")
-*/
-- (BOOL)isInstanceValue:(id _Nullable)value __attribute__((swift_name("isInstance(value:)")));
-@property (readonly) NSString * _Nullable qualifiedName __attribute__((swift_name("qualifiedName")));
-@property (readonly) NSString * _Nullable simpleName __attribute__((swift_name("simpleName")));
 @end
 
 __attribute__((swift_name("Ktor_ioJvmSerializable")))
@@ -1440,10 +1579,53 @@ __attribute__((swift_name("CoreResponse")))
 @property (readonly) int32_t status __attribute__((swift_name("status")));
 @end
 
-__attribute__((swift_name("Kotlinx_coroutines_coreDisposableHandle")))
-@protocol UIOSKotlinx_coroutines_coreDisposableHandle
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.ExperimentalSerializationApi
+*/
+__attribute__((swift_name("Kotlinx_serialization_coreSerializersModuleCollector")))
+@protocol UIOSKotlinx_serialization_coreSerializersModuleCollector
 @required
-- (void)dispose __attribute__((swift_name("dispose()")));
+- (void)contextualKClass:(id<UIOSKotlinKClass>)kClass provider:(id<UIOSKotlinx_serialization_coreKSerializer> (^)(NSArray<id<UIOSKotlinx_serialization_coreKSerializer>> *))provider __attribute__((swift_name("contextual(kClass:provider:)")));
+- (void)contextualKClass:(id<UIOSKotlinKClass>)kClass serializer:(id<UIOSKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("contextual(kClass:serializer:)")));
+- (void)polymorphicBaseClass:(id<UIOSKotlinKClass>)baseClass actualClass:(id<UIOSKotlinKClass>)actualClass actualSerializer:(id<UIOSKotlinx_serialization_coreKSerializer>)actualSerializer __attribute__((swift_name("polymorphic(baseClass:actualClass:actualSerializer:)")));
+- (void)polymorphicDefaultBaseClass:(id<UIOSKotlinKClass>)baseClass defaultDeserializerProvider:(id<UIOSKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefault(baseClass:defaultDeserializerProvider:)"))) __attribute__((deprecated("Deprecated in favor of function with more precise name: polymorphicDefaultDeserializer")));
+- (void)polymorphicDefaultDeserializerBaseClass:(id<UIOSKotlinKClass>)baseClass defaultDeserializerProvider:(id<UIOSKotlinx_serialization_coreDeserializationStrategy> _Nullable (^)(NSString * _Nullable))defaultDeserializerProvider __attribute__((swift_name("polymorphicDefaultDeserializer(baseClass:defaultDeserializerProvider:)")));
+- (void)polymorphicDefaultSerializerBaseClass:(id<UIOSKotlinKClass>)baseClass defaultSerializerProvider:(id<UIOSKotlinx_serialization_coreSerializationStrategy> _Nullable (^)(id))defaultSerializerProvider __attribute__((swift_name("polymorphicDefaultSerializer(baseClass:defaultSerializerProvider:)")));
+@end
+
+__attribute__((swift_name("KotlinKDeclarationContainer")))
+@protocol UIOSKotlinKDeclarationContainer
+@required
+@end
+
+__attribute__((swift_name("KotlinKAnnotatedElement")))
+@protocol UIOSKotlinKAnnotatedElement
+@required
+@end
+
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.1")
+*/
+__attribute__((swift_name("KotlinKClassifier")))
+@protocol UIOSKotlinKClassifier
+@required
+@end
+
+__attribute__((swift_name("KotlinKClass")))
+@protocol UIOSKotlinKClass <UIOSKotlinKDeclarationContainer, UIOSKotlinKAnnotatedElement, UIOSKotlinKClassifier>
+@required
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.1")
+*/
+- (BOOL)isInstanceValue:(id _Nullable)value __attribute__((swift_name("isInstance(value:)")));
+@property (readonly) NSString * _Nullable qualifiedName __attribute__((swift_name("qualifiedName")));
+@property (readonly) NSString * _Nullable simpleName __attribute__((swift_name("simpleName")));
 @end
 
 
@@ -1451,21 +1633,25 @@ __attribute__((swift_name("Kotlinx_coroutines_coreDisposableHandle")))
  * @note annotations
  *   kotlinx.coroutines.InternalCoroutinesApi
 */
-__attribute__((swift_name("Kotlinx_coroutines_coreChildHandle")))
-@protocol UIOSKotlinx_coroutines_coreChildHandle <UIOSKotlinx_coroutines_coreDisposableHandle>
+__attribute__((swift_name("Kotlinx_coroutines_coreParentJob")))
+@protocol UIOSKotlinx_coroutines_coreParentJob <UIOSKotlinx_coroutines_coreJob>
 @required
 
 /**
  * @note annotations
  *   kotlinx.coroutines.InternalCoroutinesApi
 */
-- (BOOL)childCancelledCause:(UIOSKotlinThrowable *)cause __attribute__((swift_name("childCancelled(cause:)")));
+- (UIOSKotlinCancellationException *)getChildJobCancellationCause __attribute__((swift_name("getChildJobCancellationCause()")));
+@end
 
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-@property (readonly, getter=parent_) id<UIOSKotlinx_coroutines_coreJob> _Nullable parent __attribute__((swift_name("parent")));
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinUnit")))
+@interface UIOSKotlinUnit : UIOSBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)unit __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) UIOSKotlinUnit *shared __attribute__((swift_name("shared")));
+- (NSString *)description __attribute__((swift_name("description()")));
 @end
 
 
@@ -1473,45 +1659,13 @@ __attribute__((swift_name("Kotlinx_coroutines_coreChildHandle")))
  * @note annotations
  *   kotlinx.coroutines.InternalCoroutinesApi
 */
-__attribute__((swift_name("Kotlinx_coroutines_coreChildJob")))
-@protocol UIOSKotlinx_coroutines_coreChildJob <UIOSKotlinx_coroutines_coreJob>
+__attribute__((swift_name("Kotlinx_coroutines_coreSelectInstance")))
+@protocol UIOSKotlinx_coroutines_coreSelectInstance
 @required
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-- (void)parentCancelledParentJob:(id<UIOSKotlinx_coroutines_coreParentJob>)parentJob __attribute__((swift_name("parentCancelled(parentJob:)")));
-@end
-
-__attribute__((swift_name("KotlinSequence")))
-@protocol UIOSKotlinSequence
-@required
-- (id<UIOSKotlinIterator>)iterator __attribute__((swift_name("iterator()")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause")))
-@protocol UIOSKotlinx_coroutines_coreSelectClause
-@required
-@property (readonly) id clauseObject __attribute__((swift_name("clauseObject")));
-@property (readonly) UIOSKotlinUnit *(^(^ _Nullable onCancellationConstructor)(id<UIOSKotlinx_coroutines_coreSelectInstance>, id _Nullable, id _Nullable))(UIOSKotlinThrowable *, id _Nullable, id<UIOSKotlinCoroutineContext>) __attribute__((swift_name("onCancellationConstructor")));
-@property (readonly) id _Nullable (^processResFunc)(id, id _Nullable, id _Nullable) __attribute__((swift_name("processResFunc")));
-@property (readonly) void (^regFunc)(id, id<UIOSKotlinx_coroutines_coreSelectInstance>, id _Nullable) __attribute__((swift_name("regFunc")));
-@end
-
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectClause0")))
-@protocol UIOSKotlinx_coroutines_coreSelectClause0 <UIOSKotlinx_coroutines_coreSelectClause>
-@required
-@end
-
-__attribute__((swift_name("KotlinCoroutineContextKey")))
-@protocol UIOSKotlinCoroutineContextKey
-@required
+- (void)disposeOnCompletionDisposableHandle:(id<UIOSKotlinx_coroutines_coreDisposableHandle>)disposableHandle __attribute__((swift_name("disposeOnCompletion(disposableHandle:)")));
+- (void)selectInRegistrationPhaseInternalResult:(id _Nullable)internalResult __attribute__((swift_name("selectInRegistrationPhase(internalResult:)")));
+- (BOOL)trySelectClauseObject:(id)clauseObject result:(id _Nullable)result __attribute__((swift_name("trySelect(clauseObject:result:)")));
+@property (readonly) id<UIOSKotlinCoroutineContext> context __attribute__((swift_name("context")));
 @end
 
 
@@ -1717,46 +1871,6 @@ __attribute__((swift_name("Kotlinx_coroutines_coreSelectClause1")))
 __attribute__((swift_name("Kotlinx_serialization_jsonJsonElement")))
 @interface UIOSKotlinx_serialization_jsonJsonElement : UIOSBase
 @property (class, readonly, getter=companion) UIOSKotlinx_serialization_jsonJsonElementCompanion *companion __attribute__((swift_name("companion")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-__attribute__((swift_name("Kotlinx_coroutines_coreParentJob")))
-@protocol UIOSKotlinx_coroutines_coreParentJob <UIOSKotlinx_coroutines_coreJob>
-@required
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-- (UIOSKotlinCancellationException *)getChildJobCancellationCause __attribute__((swift_name("getChildJobCancellationCause()")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinUnit")))
-@interface UIOSKotlinUnit : UIOSBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)unit __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) UIOSKotlinUnit *shared __attribute__((swift_name("shared")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.coroutines.InternalCoroutinesApi
-*/
-__attribute__((swift_name("Kotlinx_coroutines_coreSelectInstance")))
-@protocol UIOSKotlinx_coroutines_coreSelectInstance
-@required
-- (void)disposeOnCompletionDisposableHandle:(id<UIOSKotlinx_coroutines_coreDisposableHandle>)disposableHandle __attribute__((swift_name("disposeOnCompletion(disposableHandle:)")));
-- (void)selectInRegistrationPhaseInternalResult:(id _Nullable)internalResult __attribute__((swift_name("selectInRegistrationPhase(internalResult:)")));
-- (BOOL)trySelectClauseObject:(id)clauseObject result:(id _Nullable)result __attribute__((swift_name("trySelect(clauseObject:result:)")));
-@property (readonly) id<UIOSKotlinCoroutineContext> context __attribute__((swift_name("context")));
 @end
 
 
