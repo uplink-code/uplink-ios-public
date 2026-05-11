@@ -258,45 +258,4 @@ final class UplinkManager {
         }
         print("DISCONNECTED")
     }
-
-    private func runFakeFlow() async {
-        withAnimation { loadingConnection = true }
-
-        do {
-            try await Task.sleep(for: .seconds(1))
-
-            let org = Organization(id: "123", name: "Atomic", avatarUrl: nil)
-            var connection = Connection(url: "https://atomic.financial", workerId: "1", isEstablished: false, orgId: "123")
-
-            withAnimation {
-                setupStoredOrganization(org: org)
-                setupStoredConnection(url: "https://atomic.financial", org: org)
-                self.currentConnection = connection
-            }
-
-            withAnimation {
-                loadingConnection = false
-                showCodeSheet = false
-            }
-
-            try await Task.sleep(for: .seconds(8))
-
-            connection.isEstablished = true
-            self.currentConnection = connection
-
-            guard let url = URL(string: "https://atomic.financial") else { return }
-
-            let svc = SFSafariViewController(url: url)
-            svc.modalPresentationStyle = .formSheet
-            sourceVC?.present(svc, animated: true)
-
-            try await Task.sleep(for: .seconds(8))
-            svc.dismiss(animated: true)
-        } catch _ {
-            withAnimation {
-                loadingConnection = false
-                showCodeSheet = false
-            }
-        }
-    }
 }
