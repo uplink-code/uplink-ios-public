@@ -1,0 +1,62 @@
+{
+  "fill" : "system-light",
+  "groups" : [
+    {
+      "blend-mode" : "normal",
+      "blur-material" : null,
+      "hidden" : false,
+      "layers" : [
+        {
+          "fill" : "none",
+          "hidden-specializations" : [
+            {
+              "value" : false
+            },
+            {
+              "appearance" : "light",
+              "value" : true
+            }
+          ],
+          "image-name" : "App-Icon-dark-1024x1024@1x.png",
+          "name" : "App-Icon-dark-1024x1024@1x"
+        },
+        {
+          "blend-mode" : "normal",
+          "fill" : "none",
+          "glass" : true,
+          "hidden-specializations" : [
+            {
+              "value" : false
+            },
+            {
+              "appearance" : "light",
+              "value" : false
+            },
+            {
+              "appearance" : "dark",
+              "value" : true
+            }
+          ],
+          "image-name" : "App-Icon-1024x1024@1x.png",
+          "name" : "App-Icon-1024x1024@1x"
+        }
+      ],
+      "lighting" : "individual",
+      "shadow" : {
+        "kind" : "layer-color",
+        "opacity" : 0.5
+      },
+      "specular" : true,
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
