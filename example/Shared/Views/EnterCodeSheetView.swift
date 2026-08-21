@@ -22,7 +22,8 @@ struct EnterCodeSheetView: View {
 
             if isLoading {
                 ProgressView()
-            } else {
+            }
+            else {
                 VStack(spacing: 16) {
                     Text("Enter your connect code")
                         .font(.headline)
@@ -30,7 +31,8 @@ struct EnterCodeSheetView: View {
                     if !voiceOverEnabled {
                         CodeInputRepresentableView(data: codeData, onSubmit: submitCode)
                             .frame(height: 60)
-                    } else {
+                    }
+                    else {
                         // Custom code input is hard with voice over on, fall back to simple field
                         TextField("Code", text: $codeData.codeString)
                             .font(.largeTitle)

@@ -67,7 +67,8 @@ private struct ConnectionRow: View {
                                         .frame(width: 8, height: 8)
                                     Text("Running")
                                         .accessibilityIdentifier("ConnectedStatusLabel")
-                                } else {
+                                }
+                                else {
                                     Circle()
                                         .fill(.green)
                                         .frame(width: 8, height: 8)
@@ -77,7 +78,8 @@ private struct ConnectionRow: View {
 
                                 Spacer()
                             }
-                        } else {
+                        }
+                        else {
                             Text("Last connected \(organization.lastConnected, style: .relative) ago")
                         }
                     }

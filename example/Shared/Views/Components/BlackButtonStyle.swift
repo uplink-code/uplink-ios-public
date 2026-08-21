@@ -20,7 +20,8 @@ struct BlackButtonStyle: ButtonStyle {
                 if makeCircular {
                     Circle()
                         .fill(Color(configuration.isPressed ? .secondaryLabel : .label))
-                } else {
+                }
+                else {
                     RoundedRectangle(cornerRadius: 8)
                         .fill(Color(configuration.isPressed ? .secondaryLabel : .label))
                 }

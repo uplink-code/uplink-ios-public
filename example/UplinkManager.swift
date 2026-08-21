@@ -10,7 +10,7 @@ import Foundation
 import SafariServices
 import SwiftData
 import SwiftUI
-import UplinkIOS
+import Uplink
 
 struct Connection: Identifiable, Hashable {
     var url: String
@@ -24,7 +24,6 @@ struct Connection: Identifiable, Hashable {
 
 @Observable @MainActor
 final class UplinkManager {
-    @ObservationIgnored private var uplink = Uplink()
     @ObservationIgnored private var workers: [String: Worker] = [:]
     @ObservationIgnored weak var sourceVC: UIViewController?
     @ObservationIgnored private var uplinkWatchdog = Watchdog()
@@ -115,14 +114,16 @@ final class UplinkManager {
                 existing.visitCount += 1
 
                 connection = existing
-            } else {
+            }
+            else {
                 connection = StoredConnection(url: url)
             }
 
             if !connection.organizations.contains(where: { $0.id == org.id }) {
                 if let storedOrg = DataModel.main.findOrg(with: org.id) {
                     connection.organizations.append(storedOrg)
-                } else {
+                }
+                else {
                     let newOrg = StoredOrganization(id: org.id, name: org.name, logoUrl: org.avatarUrl)
                     DataModel.main.context.insert(newOrg)
                     connection.organizations.append(newOrg)
@@ -137,7 +138,8 @@ final class UplinkManager {
         try? DataModel.main.context.transaction {
             if let existing = DataModel.main.findOrg(with: org.id) {
                 existing.lastConnected = Date()
-            } else {
+            }
+            else {
                 let newOrg = StoredOrganization(id: org.id, name: org.name, logoUrl: org.avatarUrl)
                 DataModel.main.context.insert(newOrg)
             }
@@ -149,32 +151,34 @@ final class UplinkManager {
 
         do {
             let workerId = try await connect(session: baseUrl) { [weak self] event in
-                print(event)
+                Task { @MainActor in
+                    print(event)
 
-                guard let self else { return }
+                    guard let self else { return }
 
-                switch event.eventType {
-                case .pageRequest:
-                    if let details = event.details, let url = details["url"] as? String {
-                        print("Received a page.request to \(url)")
-                        self.setupStoredConnection(url: url, org: organization)
-                    }
-
-                    if var currentConnection = self.currentConnection, currentConnection.isEstablished == false {
-                        withAnimation {
-                            currentConnection.isEstablished = true
-                            self.currentConnection = currentConnection
+                    switch event.eventType {
+                    case .pageRequest:
+                        if let details = event.details, let url = details["url"] as? String {
+                            print("Received a page.request to \(url)")
+                            self.setupStoredConnection(url: url, org: organization)
                         }
-                    }
 
-                    if self.loadingConnection {
-                        withAnimation {
-                            loadingConnection = false
+                        if var currentConnection = self.currentConnection, currentConnection.isEstablished == false {
+                            withAnimation {
+                                currentConnection.isEstablished = true
+                                self.currentConnection = currentConnection
+                            }
                         }
+
+                        if self.loadingConnection {
+                            withAnimation {
+                                self.loadingConnection = false
+                            }
+                        }
+                    case .terminated:
+                        //                    self.currentConnection = nil
+                        print("Worker terminated")
                     }
-                case .terminated:
-                    //                    self.currentConnection = nil
-                    print("Worker terminated")
                 }
             }
 
@@ -182,12 +186,13 @@ final class UplinkManager {
             self.currentConnection = connection
 
             try await accept(connection: connection)
-        } catch let error {
+        }
+        catch let error {
             print(error)
         }
     }
 
-    struct WorkerEvent: Sendable {
+    struct UplinkEvent: Sendable {
         var eventType: EventType
         var details: [String: any Sendable]?
 
@@ -197,32 +202,31 @@ final class UplinkManager {
         }
     }
 
-    private func connect(session: String, onWorkerEvent: @escaping (_ event: WorkerEvent) -> Void) async throws -> String {
+    private func connect(session: String, onWorkerEvent: @escaping @Sendable (_ event: UplinkEvent) -> Void) async throws -> String {
         guard let sourceVC else { throw ConnectionError.noSourceViewController }
 
-        let worker = uplink.worker(controller: sourceVC)
-        worker.options.apiHost = "https://api.uplink.build"
+        let worker = await Worker(controller: sourceVC)
 
         let workerId = UUID().uuidString
         workers[workerId] = worker
 
-        worker.watch { [weak self] event in
+        await worker.watch { [weak self] event in
             switch event {
-            case _ as UplinkIOS.WorkerEvent.Terminated:
+            case WorkerEvent.terminated:
                 onWorkerEvent(.init(eventType: .terminated))
-            case let e as PageEvent.Request:
+            case PageEvent.request(let url, let method, let headers):
                 onWorkerEvent(
                     .init(
                         eventType: .pageRequest,
                         details: [
-                            "url": e.url, "method": e.method, "headers": e.headers
+                            "url": url, "method": method, "headers": headers
                         ])
                 )
             default:
                 break
             }
 
-            self?.uplinkWatchdog.feed()
+            await self?.uplinkWatchdog.feed()
         }
 
         try await worker.connect(session: session)
@@ -239,7 +243,7 @@ final class UplinkManager {
         print("GOT A WORKER \(worker)")
 
         Task {
-            try await worker.accept()
+            await worker.accept()
             self.currentConnection = nil
         }
         print("ACCEPTED")
@@ -254,7 +258,7 @@ final class UplinkManager {
 
         self.currentConnection = nil
         Task {
-            try await worker.close()
+            await worker.close()
         }
         print("DISCONNECTED")
     }

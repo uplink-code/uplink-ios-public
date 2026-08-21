@@ -59,7 +59,8 @@ class DataModel {
         )
         do {
             return (try context.fetch(request)).first
-        } catch let error {
+        }
+        catch let error {
             print(error)
             return nil
         }
@@ -71,7 +72,8 @@ class DataModel {
         )
         do {
             return (try context.fetch(request)).first
-        } catch let error {
+        }
+        catch let error {
             print(error)
             return nil
         }
@@ -105,7 +107,8 @@ class DataModel {
 
         do {
             try context.save()
-        } catch let error {
+        }
+        catch let error {
             print("Failed to save dummy data: \(error)")
         }
 

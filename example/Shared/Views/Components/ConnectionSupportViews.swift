@@ -12,9 +12,7 @@ struct OrgLogoView: View {
 
     var body: some View {
         Group {
-            if let logo = org.logoUrl,
-                let logoUrl = URL(string: logo)
-            {
+            if let logo = org.logoUrl, let logoUrl = URL(string: logo) {
                 AsyncImage(url: logoUrl) { image in
                     image
                         .resizable()
@@ -23,7 +21,8 @@ struct OrgLogoView: View {
                 } placeholder: {
                     ProgressView()
                 }
-            } else {
+            }
+            else {
                 Text(org.name.prefix(1))
                     .font(.headline)
                     .foregroundStyle(.secondary)
@@ -54,7 +53,8 @@ struct ConnectionFaviconView: View {
                 } placeholder: {
                     ProgressView()
                 }
-            } else {
+            }
+            else {
                 ProgressView()
             }
         }

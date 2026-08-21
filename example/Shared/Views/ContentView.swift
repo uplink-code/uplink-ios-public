@@ -32,7 +32,8 @@ struct ContentView: View {
                     .padding(.horizontal)
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
-                } else {
+                }
+                else {
                     ConnectionsListView(
                         organizations: organizations,
                         showConnectionDetails: $showConnectionDetails,

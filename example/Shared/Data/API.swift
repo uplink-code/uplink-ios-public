@@ -36,20 +36,23 @@ enum API {
                 do {
                     let decodedResponse = try JSONDecoder().decode(Response.self, from: data)
                     return decodedResponse
-                } catch let decodeError {
+                }
+                catch let decodeError {
                     let responseBody = (try? JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed])) as? [String: any Sendable]
                     let willThrow = APIError.decodeError(error: decodeError, responseBody: responseBody)
                     print(willThrow)
                     throw willThrow
                 }
-            } else {
+            }
+            else {
                 let statusCode = (response as? HTTPURLResponse)?.statusCode
                 let responseBody = try? JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed]) as? [String: any Sendable]
                 let willThrow = APIError.httpError(statusCode: statusCode, responseBody: responseBody, error: nil)
                 print(willThrow)
                 throw willThrow
             }
-        } catch let error {
+        }
+        catch let error {
             let willThrow = APIError.httpError(statusCode: nil, responseBody: nil, error: error)
             print(willThrow)
             throw willThrow

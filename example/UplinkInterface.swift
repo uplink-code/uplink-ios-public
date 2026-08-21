@@ -19,10 +19,10 @@ struct ConnectionVCBridge: UIViewControllerRepresentable {
     @Binding var uplinkManager: UplinkManager
 
     func makeUIViewController(context: Context) -> some UIViewController {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .clear
-        uplinkManager.sourceVC = vc
-        return vc
+        let controller = UIViewController()
+        controller.view.backgroundColor = .clear
+        uplinkManager.sourceVC = controller
+        return controller
     }
 
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {

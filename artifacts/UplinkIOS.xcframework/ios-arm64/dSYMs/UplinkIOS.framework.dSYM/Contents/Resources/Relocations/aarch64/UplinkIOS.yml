@@ -1,5 +1,0 @@
----
-triple:          'arm64-apple-darwin'
-binary-path:     '/Users/runner/work/uplink/uplink/core/build/bin/iosArm64/releaseFramework/UplinkIOS.framework/UplinkIOS'
-relocations:     []
-...

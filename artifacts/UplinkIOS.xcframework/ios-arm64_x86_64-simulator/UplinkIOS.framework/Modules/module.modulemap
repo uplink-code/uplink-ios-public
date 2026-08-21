@@ -1,5 +1,0 @@
-framework module "UplinkIOS" {
-    umbrella header "UplinkIOS.h"
-    export *
-    module * { export * }
-}

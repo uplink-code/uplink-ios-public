@@ -1,0 +1,29 @@
+name: "Create Release"
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  release:
+    name: "Make Release"
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Compress Archives
+        run: |
+          tar -czf Uplink.xcframework.tar.gz artifacts/Uplink.xcframework
+          tar -czf Uplink-Dynamic.xcframework.tar.gz artifacts/Uplink-Dynamic.xcframework
+          tar -czf MuppetIOS.xcframework.tar.gz artifacts/MuppetIOS.xcframework
+          tar -czf MuppetIOS-Dynamic.xcframework.tar.gz artifacts/MuppetIOS-Dynamic.xcframework
+      - name: Create Release
+        uses: mikepenz/action-gh-release@2a00e201320fb618d8e705a736286b2e31aa48e2
+        with:
+          body_path: ${{ github.workspace }}/.github/releases/release-body.txt
+          files: |
+            Uplink.xcframework.tar.gz
+            Uplink-Dynamic.xcframework.tar.gz
+            MuppetIOS.xcframework.tar.gz
+            MuppetIOS-Dynamic.xcframework.tar.gz

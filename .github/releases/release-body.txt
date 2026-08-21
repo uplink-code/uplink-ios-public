@@ -1,0 +1,28 @@
+## 2026-08-21
+
+### Impact
+
+This release includes breaking changes for some Uplink APIs. See the full list of changes below or use the updated Connect example app as a migration reference. 
+
+It also introduces an optional dynamic framework variant, as well as arm64e binary slices. 
+
+### Changes
+
+- Minimum requirements have been bumped to iOS 15.0 and Xcode 26.1.
+- Renamed the package import product from `UplinkIOS` to `Uplink`
+- `Uplink` is now static by default. There is a `Uplink-Dynamic` variant if needed. Only link one or the other. 
+- Removed the root `Uplink()` object. Only retain active `Worker` objects now. 
+- Create workers directly: 
+	`uplink.worker(controller: sourceVC)` -> `await Worker(controller: sourceVC)`
+- Worker `watch`, `accept`, and `close` functions are now async. `accept` and `close` no longer throw. 
+- Watched event types now use Swift-style enum cases and associated values: 
+	- `WorkerEvent.Terminated` -> `WorkerEvent.terminated`
+	- `PageEvent.Request` -> `PageEvent.request(url, method, headers)`
+- Worker callbacks are no longer delivered on the MainActor. 
+
+### Requirements
+
+| Name  | Version |
+| ----- | ------- |
+| Xcode | >= 26.1 |
+| iOS   | >= 15.0 |

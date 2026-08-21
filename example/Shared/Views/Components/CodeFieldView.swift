@@ -211,7 +211,8 @@ struct CodeInputDigitView: View {
     func field(for index: Int) -> some View {
         if let digit = data.digits[index] {
             Text("\(digit)")
-        } else {
+        }
+        else {
             Text("")
                 .overlay {
                     if index == data.codeString.count && data.currentIndex != nil {
