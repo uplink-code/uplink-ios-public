@@ -1,10 +1,6 @@
-## 2026-09-28
-
 ### Changes
 
-- Network interception events now include a stable request identifier, making it easier to recognize and deduplicate repeated observations of the same request.
-- Improved selector handling for browser automation commands.
-- Strengthened validation and failure handling for session connectivity and encrypted transport setup.
+- Fixed an issue that would cause a worker to be stuck after a timeout
 
 ### Requirements
 
